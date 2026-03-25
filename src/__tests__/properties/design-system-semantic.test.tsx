@@ -1,5 +1,4 @@
-// Feature: personal-portfolio, Property 10: Design system components render semantic HTML with theme support
-// **Validates: Requirements 12.3, 12.5**
+// Verifies design system components use semantic HTML and support dark/light themes
 
 import { render } from '@testing-library/react';
 import Button from '@/components/ui/Button';

@@ -1,5 +1,4 @@
-// Feature: personal-portfolio, Property 3: Skill proficiency values are valid
-// **Validates: Requirements 4.2**
+// Validates all skills have a valid proficiency level
 
 import { getSkills } from '@/lib/data';
 
