@@ -116,23 +116,23 @@ export function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-gray-200 bg-background-light/80 backdrop-blur-md dark:border-gray-800 dark:bg-background-dark/80">
-      <nav aria-label="Main navigation" className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
+      <nav aria-label="Main navigation" className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:py-5">
         {/* Logo / Name */}
         <Link
           to="/"
-          className="text-lg font-bold tracking-tight text-gray-900 dark:text-white hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+          className="text-xl font-bold tracking-tight text-gray-900 dark:text-white hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
           onClick={closeMobileMenu}
         >
           Portfolio
         </Link>
 
         {/* Desktop nav links */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-8">
           {navigationItems.map((item) => (
             <Link
               key={item.href}
               to={item.href}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-base font-medium transition-colors ${
                 isActiveRoute(item.href)
                   ? 'text-primary-500 dark:text-primary-400'
                   : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
@@ -144,23 +144,23 @@ export function Navbar() {
         </div>
 
         {/* Desktop toggles */}
-        <div className="hidden md:flex items-center gap-2">
+        <div className="hidden md:flex items-center gap-3">
           <button
             onClick={toggleTheme}
             aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-            className="rounded-lg p-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className="rounded-lg p-2.5 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           >
             {theme === 'dark' ? (
-              <SunIcon className="h-5 w-5" />
+              <SunIcon className="h-6 w-6" />
             ) : (
-              <MoonIcon className="h-5 w-5" />
+              <MoonIcon className="h-6 w-6" />
             )}
           </button>
 
           <button
             onClick={toggleLanguage}
             aria-label={`Switch to ${currentLang === 'en' ? 'Spanish' : 'English'}`}
-            className="rounded-lg px-2.5 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className="rounded-lg px-3 py-2 text-base font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           >
             {currentLang === 'en' ? 'ES' : 'EN'}
           </button>
@@ -171,12 +171,12 @@ export function Navbar() {
           onClick={() => setMobileMenuOpen((prev) => !prev)}
           aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileMenuOpen}
-          className="md:hidden rounded-lg p-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          className="md:hidden rounded-lg p-2.5 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
         >
           {mobileMenuOpen ? (
-            <CloseIcon className="h-5 w-5" />
+            <CloseIcon className="h-6 w-6" />
           ) : (
-            <HamburgerIcon className="h-5 w-5" />
+            <HamburgerIcon className="h-6 w-6" />
           )}
         </button>
       </nav>
