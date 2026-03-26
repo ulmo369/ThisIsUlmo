@@ -5,7 +5,9 @@ import Section from '@/components/ui/Section'
 import Container from '@/components/ui/Container'
 import Heading from '@/components/ui/Heading'
 import { Navbar } from '@/components/layout/Navbar'
+import { Footer } from '@/components/layout/Footer'
 import { ScrollToTopButton } from '@/components/layout/ScrollToTopButton'
+import { LoadingFallback } from '@/components/layout/LoadingFallback'
 
 export default function ComponentsView() {
   return (
@@ -125,24 +127,47 @@ export default function ComponentsView() {
           </Container>
         </Section>
 
-        {/* Scroll spacer */}
+        {/* Loading Fallback */}
         <Section>
           <Container>
-            <div className="h-[800px] flex items-center justify-center text-gray-500 dark:text-gray-400">
-              <p className="text-center">↓ Scroll down to see the scroll-to-top button appear ↓</p>
+            <Heading level={2}>Loading Fallback</Heading>
+            <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">Spinner used as Suspense fallback for lazy-loaded pages.</p>
+            <div className="mt-4 rounded-xl border border-gray-200 dark:border-gray-800 p-8">
+              <LoadingFallback />
             </div>
           </Container>
         </Section>
 
-        {/* Footer placeholder */}
-        <footer className="border-t border-gray-200 dark:border-gray-800 py-8">
+        {/* Error Boundary Fallback (static preview) */}
+        <Section>
           <Container>
-            <p className="text-center text-sm text-gray-500 dark:text-gray-400">
-              Footer component will be added in task 5.6
-            </p>
+            <Heading level={2}>Error Boundary Fallback</Heading>
+            <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">Friendly error state shown when a runtime error is caught.</p>
+            <div className="mt-4 rounded-xl border border-gray-200 dark:border-gray-800 p-8">
+              <div className="flex flex-col items-center justify-center gap-6 text-center">
+                <div className="text-6xl" aria-hidden="true">⚠️</div>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Something went wrong</h3>
+                <p className="max-w-md text-gray-600 dark:text-gray-400">An unexpected error occurred. Please try again or refresh the page.</p>
+                <button className="rounded-lg bg-primary-600 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-400">
+                  Try Again
+                </button>
+              </div>
+            </div>
           </Container>
-        </footer>
+        </Section>
+
+        {/* Scroll spacer */}
+        <Section>
+          <Container>
+            <div className="h-[600px] flex items-center justify-center text-gray-500 dark:text-gray-400">
+              <p className="text-center">↓ Scroll down to see the scroll-to-top button ↓</p>
+            </div>
+          </Container>
+        </Section>
       </div>
+
+      {/* Real Footer component */}
+      <Footer />
     </div>
   )
 }
