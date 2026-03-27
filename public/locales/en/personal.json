@@ -1,0 +1,20 @@
+{
+  "title": "Who is Emilio",
+  "subtitle": "Beyond the code — a glimpse into the person behind the engineer.",
+  "sports": {
+    "title": "Sports",
+    "description": "Triathlon enthusiast. Swimming, cycling, and running keep me disciplined and focused — the same qualities I bring to engineering."
+  },
+  "books": {
+    "title": "Books",
+    "description": "Avid reader of technical literature, systems design, and science fiction. Always learning, always curious."
+  },
+  "games": {
+    "title": "Games",
+    "description": "Zelda fan since childhood. The puzzle-solving and exploration mirror how I approach complex engineering challenges."
+  },
+  "personality": {
+    "title": "Personality",
+    "description": "Curious, methodical, and driven. I thrive on solving hard problems and building things that matter."
+  }
+}

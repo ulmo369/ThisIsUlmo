@@ -1,0 +1,19 @@
+{
+  "title": "Skills & Technologies",
+  "subtitle": "A comprehensive toolkit built through years of hands-on engineering across the full stack.",
+  "categories": {
+    "programmingLanguages": "Programming Languages",
+    "cloudInfrastructure": "Cloud & Infrastructure",
+    "aiDataScience": "AI / Data Science",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "databases": "Databases",
+    "testing": "Testing",
+    "toolsWorkflow": "Tools & Workflow"
+  },
+  "proficiency": {
+    "core": "Core",
+    "experienced": "Experienced",
+    "familiar": "Familiar"
+  }
+}

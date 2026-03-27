@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "footer": {
+    "signature": "Built with precision and passion — Diego Emilio Barrera Hernandez"
+  },
+  "buttons": {
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me",
+    "downloadResume": "Download Resume"
+  },
+  "theme": {
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode"
+  },
+  "language": {
+    "switchToEs": "Switch to Spanish",
+    "switchToEn": "Switch to English"
+  }
+}

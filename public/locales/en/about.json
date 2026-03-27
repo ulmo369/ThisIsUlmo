@@ -1,0 +1,21 @@
+{
+  "title": "About Me",
+  "intro": "I approach engineering with a systems-thinking mindset, focusing on building solutions that are both technically sound and impactful at scale.",
+  "mindset": {
+    "title": "Engineering Mindset",
+    "description": "I believe in understanding problems deeply before writing a single line of code. Every system I build starts with clarity on constraints, trade-offs, and long-term maintainability."
+  },
+  "leadership": {
+    "title": "Leadership",
+    "description": "Leading through technical excellence and mentorship. I help teams ship high-quality software by fostering a culture of code reviews, knowledge sharing, and continuous improvement."
+  },
+  "systems": {
+    "title": "Systems Thinking",
+    "description": "Designing with the big picture in mind. I consider how components interact, where bottlenecks emerge, and how systems evolve over time."
+  },
+  "principles": {
+    "simplicity": "Simplicity over complexity",
+    "maintainable": "Maintainable code",
+    "understand": "Understand before building"
+  }
+}

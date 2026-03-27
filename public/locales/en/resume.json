@@ -1,0 +1,12 @@
+{
+  "title": "Resume",
+  "subtitle": "A summary of my professional experience, education, and skills.",
+  "download": "Download PDF",
+  "sections": {
+    "summary": "Summary",
+    "experience": "Experience",
+    "education": "Education",
+    "skills": "Skills",
+    "awards": "Awards"
+  }
+}

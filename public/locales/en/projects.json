@@ -1,0 +1,23 @@
+{
+  "title": "Projects",
+  "subtitle": "A selection of impactful projects showcasing end-to-end engineering.",
+  "featured": "Featured Projects",
+  "other": "Other Projects",
+  "viewAll": "View All Projects",
+  "viewProject": "View Project",
+  "techStack": "Tech Stack",
+  "star": {
+    "situation": "Situation",
+    "task": "Task",
+    "action": "Action",
+    "result": "Result"
+  },
+  "engineering": {
+    "title": "Engineering Highlights",
+    "decisions": "Key Decisions",
+    "tradeoffs": "Trade-offs",
+    "constraints": "Constraints",
+    "scalability": "Scalability"
+  },
+  "backToProjects": "Back to Projects"
+}

@@ -1,0 +1,18 @@
+{
+  "home": {
+    "title": "Diego Emilio Barrera Hernandez — Software Engineer",
+    "description": "Personal portfolio of Diego Emilio Barrera Hernandez, Software Development Engineer specializing in AI, data science, and cloud-native systems."
+  },
+  "projects": {
+    "title": "Projects — Diego Emilio Barrera Hernandez",
+    "description": "Explore impactful engineering projects spanning AI, cloud infrastructure, and scalable systems."
+  },
+  "blog": {
+    "title": "Blog — Diego Emilio Barrera Hernandez",
+    "description": "Technical articles and engineering insights from building systems at scale."
+  },
+  "contact": {
+    "title": "Contact — Diego Emilio Barrera Hernandez",
+    "description": "Get in touch with Diego Emilio Barrera Hernandez for collaboration or opportunities."
+  }
+}
