@@ -64,7 +64,7 @@ const namespaces: Record<string, { en: Record<string, TranslationValue>; es: Rec
   personal: { en: enPersonal, es: esPersonal },
 };
 
-// Feature: personal-portfolio, Property 9: Translation key completeness across languages
+// Verifies EN↔ES translation key parity across all namespaces
 describe('Property 9: Translation key completeness across languages', () => {
   for (const [ns, { en, es }] of Object.entries(namespaces)) {
     describe(`namespace: ${ns}`, () => {
