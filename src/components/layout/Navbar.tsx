@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useThemeContext } from '@/lib/ThemeProvider';
 import { navigationItems } from '@/data/navigation';
 
-// Sun icon for light mode indicator
 function SunIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -30,7 +30,6 @@ function SunIcon({ className }: { className?: string }) {
   );
 }
 
-// Moon icon for dark mode indicator
 function MoonIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -49,7 +48,6 @@ function MoonIcon({ className }: { className?: string }) {
   );
 }
 
-// Hamburger icon for mobile menu
 function HamburgerIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -70,7 +68,7 @@ function HamburgerIcon({ className }: { className?: string }) {
   );
 }
 
-// Close icon for mobile menu
+
 function CloseIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -90,21 +88,24 @@ function CloseIcon({ className }: { className?: string }) {
   );
 }
 
-// Extract display label from i18n key (e.g., 'common.nav.home' → 'Home')
-function getDisplayLabel(label: string): string {
-  const parts = label.split('.');
-  const raw = parts[parts.length - 1];
-  return raw.charAt(0).toUpperCase() + raw.slice(1);
+// Resolve nav item label via i18n key (e.g., 'common.nav.home' → t('nav.home'))
+function useNavLabel(label: string): string {
+  const { t } = useTranslation('common');
+  const key = label.replace(/^common\./, '');
+  return t(key);
 }
 
 export function Navbar() {
   const { theme, toggleTheme } = useThemeContext();
+  const { t, i18n } = useTranslation('common');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState<'en' | 'es'>('en');
   const location = useLocation();
 
+  const currentLang = i18n.language?.startsWith('es') ? 'es' : 'en';
+
   const toggleLanguage = () => {
-    setCurrentLang((prev) => (prev === 'en' ? 'es' : 'en'));
+    const newLang = currentLang === 'en' ? 'es' : 'en';
+    i18n.changeLanguage(newLang);
   };
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
@@ -114,10 +115,12 @@ export function Navbar() {
     return location.pathname.startsWith(href);
   };
 
+  const themeAriaLabel = theme === 'dark' ? t('theme.switchToLight') : t('theme.switchToDark');
+  const langAriaLabel = currentLang === 'en' ? t('language.switchToEs') : t('language.switchToEn');
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-gray-200 bg-background-light/80 backdrop-blur-md dark:border-gray-800 dark:bg-background-dark/80">
       <nav aria-label="Main navigation" className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:py-5">
-        {/* Logo / Name */}
         <Link
           to="/"
           className="text-xl font-bold tracking-tight text-gray-900 dark:text-white hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
@@ -129,17 +132,7 @@ export function Navbar() {
         {/* Desktop nav links */}
         <div className="hidden md:flex items-center gap-8">
           {navigationItems.map((item) => (
-            <Link
-              key={item.href}
-              to={item.href}
-              className={`text-base font-medium transition-colors ${
-                isActiveRoute(item.href)
-                  ? 'text-primary-500 dark:text-primary-400'
-                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
-              }`}
-            >
-              {getDisplayLabel(item.label)}
-            </Link>
+            <NavLink key={item.href} item={item} isActive={isActiveRoute(item.href)} />
           ))}
         </div>
 
@@ -147,19 +140,15 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <button
             onClick={toggleTheme}
-            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            aria-label={themeAriaLabel}
             className="rounded-lg p-2.5 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           >
-            {theme === 'dark' ? (
-              <SunIcon className="h-6 w-6" />
-            ) : (
-              <MoonIcon className="h-6 w-6" />
-            )}
+            {theme === 'dark' ? <SunIcon className="h-6 w-6" /> : <MoonIcon className="h-6 w-6" />}
           </button>
 
           <button
             onClick={toggleLanguage}
-            aria-label={`Switch to ${currentLang === 'en' ? 'Spanish' : 'English'}`}
+            aria-label={langAriaLabel}
             className="rounded-lg px-3 py-2 text-base font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           >
             {currentLang === 'en' ? 'ES' : 'EN'}
@@ -173,11 +162,7 @@ export function Navbar() {
           aria-expanded={mobileMenuOpen}
           className="md:hidden rounded-lg p-2.5 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
         >
-          {mobileMenuOpen ? (
-            <CloseIcon className="h-6 w-6" />
-          ) : (
-            <HamburgerIcon className="h-6 w-6" />
-          )}
+          {mobileMenuOpen ? <CloseIcon className="h-6 w-6" /> : <HamburgerIcon className="h-6 w-6" />}
         </button>
       </nav>
 
@@ -196,26 +181,22 @@ export function Navbar() {
                     : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'
                 }`}
               >
-                {getDisplayLabel(item.label)}
+                <NavLabelText label={item.label} />
               </Link>
             ))}
 
             <div className="flex items-center gap-2 border-t border-gray-200 dark:border-gray-800 pt-3 mt-2">
               <button
                 onClick={toggleTheme}
-                aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+                aria-label={themeAriaLabel}
                 className="rounded-lg p-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               >
-                {theme === 'dark' ? (
-                  <SunIcon className="h-5 w-5" />
-                ) : (
-                  <MoonIcon className="h-5 w-5" />
-                )}
+                {theme === 'dark' ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
               </button>
 
               <button
                 onClick={toggleLanguage}
-                aria-label={`Switch to ${currentLang === 'en' ? 'Spanish' : 'English'}`}
+                aria-label={langAriaLabel}
                 className="rounded-lg px-2.5 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               >
                 {currentLang === 'en' ? 'ES' : 'EN'}
@@ -225,5 +206,28 @@ export function Navbar() {
         </div>
       )}
     </header>
+  );
+}
+
+// Renders a translated nav label from an i18n key
+function NavLabelText({ label }: { label: string }) {
+  const displayLabel = useNavLabel(label);
+  return <>{displayLabel}</>;
+}
+
+// Desktop nav link with i18n label
+function NavLink({ item, isActive }: { item: { label: string; href: string }; isActive: boolean }) {
+  const displayLabel = useNavLabel(item.label);
+  return (
+    <Link
+      to={item.href}
+      className={`text-base font-medium transition-colors ${
+        isActive
+          ? 'text-primary-500 dark:text-primary-400'
+          : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+      }`}
+    >
+      {displayLabel}
+    </Link>
   );
 }
