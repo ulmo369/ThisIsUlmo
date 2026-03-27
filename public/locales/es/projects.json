@@ -1,0 +1,23 @@
+{
+  "title": "Proyectos",
+  "subtitle": "Una selección de proyectos impactantes que muestran ingeniería de extremo a extremo.",
+  "featured": "Proyectos Destacados",
+  "other": "Otros Proyectos",
+  "viewAll": "Ver Todos los Proyectos",
+  "viewProject": "Ver Proyecto",
+  "techStack": "Stack Tecnológico",
+  "star": {
+    "situation": "Situación",
+    "task": "Tarea",
+    "action": "Acción",
+    "result": "Resultado"
+  },
+  "engineering": {
+    "title": "Aspectos Destacados de Ingeniería",
+    "decisions": "Decisiones Clave",
+    "tradeoffs": "Compromisos",
+    "constraints": "Restricciones",
+    "scalability": "Escalabilidad"
+  },
+  "backToProjects": "Volver a Proyectos"
+}

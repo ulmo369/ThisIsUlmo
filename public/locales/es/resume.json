@@ -1,0 +1,12 @@
+{
+  "title": "Currículum",
+  "subtitle": "Un resumen de mi experiencia profesional, educación y habilidades.",
+  "download": "Descargar PDF",
+  "sections": {
+    "summary": "Resumen",
+    "experience": "Experiencia",
+    "education": "Educación",
+    "skills": "Habilidades",
+    "awards": "Premios"
+  }
+}

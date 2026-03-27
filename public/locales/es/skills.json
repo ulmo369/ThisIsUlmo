@@ -1,0 +1,19 @@
+{
+  "title": "Habilidades y Tecnologías",
+  "subtitle": "Un conjunto de herramientas integral construido a través de años de ingeniería práctica en toda la pila.",
+  "categories": {
+    "programmingLanguages": "Lenguajes de Programación",
+    "cloudInfrastructure": "Nube e Infraestructura",
+    "aiDataScience": "IA / Ciencia de Datos",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "databases": "Bases de Datos",
+    "testing": "Pruebas",
+    "toolsWorkflow": "Herramientas y Flujo de Trabajo"
+  },
+  "proficiency": {
+    "core": "Principal",
+    "experienced": "Experimentado",
+    "familiar": "Familiar"
+  }
+}

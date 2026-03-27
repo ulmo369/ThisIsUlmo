@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "blog": "Blog",
+    "contact": "Contacto"
+  },
+  "footer": {
+    "signature": "Construido con precisión y pasión — Diego Emilio Barrera Hernandez"
+  },
+  "buttons": {
+    "viewProjects": "Ver Proyectos",
+    "contactMe": "Contáctame",
+    "downloadResume": "Descargar CV"
+  },
+  "theme": {
+    "switchToLight": "Cambiar a modo claro",
+    "switchToDark": "Cambiar a modo oscuro"
+  },
+  "language": {
+    "switchToEs": "Cambiar a español",
+    "switchToEn": "Cambiar a inglés"
+  }
+}
