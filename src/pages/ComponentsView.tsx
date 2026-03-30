@@ -8,6 +8,11 @@ import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { ScrollToTopButton } from '@/components/layout/ScrollToTopButton'
 import { LoadingFallback } from '@/components/layout/LoadingFallback'
+import HeroSection from '@/components/sections/HeroSection'
+import AboutSection from '@/components/sections/AboutSection'
+import SkillsSection from '@/components/sections/SkillsSection'
+import ExperienceSection from '@/components/sections/ExperienceSection'
+import ProjectsSection from '@/components/sections/ProjectsSection'
 
 export default function ComponentsView() {
   return (
@@ -155,6 +160,20 @@ export default function ComponentsView() {
             </div>
           </Container>
         </Section>
+
+        {/* === Landing Page Sections Preview === */}
+        <Section className="bg-gray-50 dark:bg-gray-900/50">
+          <Container>
+            <Heading level={2}>Landing Page Sections</Heading>
+            <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">Preview of all landing page sections below.</p>
+          </Container>
+        </Section>
+
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <ExperienceSection />
+        <ProjectsSection />
 
         {/* Scroll spacer */}
         <Section>
