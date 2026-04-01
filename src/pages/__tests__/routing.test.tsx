@@ -99,7 +99,7 @@ describe('ErrorBoundary catches and displays fallback', () => {
 });
 
 
-// Feature: personal-portfolio, Property 1: Layout consistency across all routes
+// Verifies Navbar and Footer render on every route
 describe('Property 1: Layout consistency across all routes', () => {
   const validRoutes = [
     '/',
@@ -123,7 +123,7 @@ describe('Property 1: Layout consistency across all routes', () => {
   });
 });
 
-// Feature: personal-portfolio, Property 2: Undefined routes render 404 with home link
+// Verifies random invalid routes render 404 with a home link
 describe('Property 2: Undefined routes render 404 with home link', () => {
   const definedPrefixes = ['/', '/projects', '/blog', '/contact', '/dev/components'];
 
