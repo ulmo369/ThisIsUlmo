@@ -19,5 +19,8 @@
     "constraints": "Restricciones",
     "scalability": "Escalabilidad"
   },
-  "backToProjects": "Volver a Proyectos"
+  "backToProjects": "Volver a Proyectos",
+  "notFound": "Proyecto no encontrado",
+  "notFoundDescription": "El proyecto que buscas no existe o ha sido eliminado.",
+  "diagramPlaceholder": "Diagrama de arquitectura próximamente"
 }
