@@ -1,6 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import SEOHead from '@/utils/SEOHead';
+import { seoData } from '@/data/seo';
 import { projects } from '@/data/projects';
 import { fadeInUp, staggerContainer } from '@/lib/motion';
 import Section from '@/components/ui/Section';
@@ -42,12 +44,14 @@ function ProjectCard({ project }: { project: Project }) {
 
 export default function ProjectsPage() {
   const { t } = useTranslation('projects');
+  const seo = seoData['/projects'];
 
   const featuredProjects = projects.filter((p) => p.featured);
   const otherProjects = projects.filter((p) => !p.featured);
 
   return (
     <Section>
+      <SEOHead title={seo.title} description={seo.description} ogImage={seo.ogImage} ogUrl={seo.ogUrl} />
       <Container>
         <motion.div
           variants={staggerContainer}

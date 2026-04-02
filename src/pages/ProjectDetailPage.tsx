@@ -1,6 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import SEOHead from '@/utils/SEOHead';
+import { seoData } from '@/data/seo';
 import { projects } from '@/data/projects';
 import { fadeInUp, fadeIn, staggerContainer } from '@/lib/motion';
 import Section from '@/components/ui/Section';
@@ -22,9 +24,12 @@ export default function ProjectDetailPage() {
 
   const project = projects.find((p) => p.slug === slug);
 
+  const fallbackSeo = seoData['/projects/:slug'];
+
   if (!project) {
     return (
       <Section>
+        <SEOHead title={fallbackSeo.title} description={fallbackSeo.description} ogImage={fallbackSeo.ogImage} ogUrl={fallbackSeo.ogUrl} />
         <Container className="text-center py-20">
           <Heading level={2}>{t('notFound')}</Heading>
           <p className="mt-4 text-gray-600 dark:text-gray-400">
@@ -40,6 +45,12 @@ export default function ProjectDetailPage() {
 
   return (
     <Section>
+      <SEOHead
+        title={`${project.title} | Diego Emilio Barrera Hernandez`}
+        description={project.description}
+        ogImage={fallbackSeo.ogImage}
+        ogUrl={`https://placeholder.dev/projects/${project.slug}`}
+      />
       <Container>
         <motion.div
           variants={staggerContainer}
