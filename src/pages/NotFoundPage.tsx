@@ -21,7 +21,7 @@ const asciiArt = `
 const cursorVariants = {
   blink: {
     opacity: [1, 0, 1],
-    transition: { duration: 1, repeat: Infinity, ease: 'linear' },
+    transition: { duration: 1, repeat: Infinity, ease: 'linear' as const },
   },
 };
 
