@@ -64,7 +64,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 border-t border-gray-200 pt-6 text-center dark:border-gray-800">
-          <p className="text-sm text-gray-500 dark:text-gray-500">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
             {t('footer.signature')}
           </p>
         </div>
