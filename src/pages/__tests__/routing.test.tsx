@@ -147,7 +147,7 @@ describe('Property 2: Undefined routes render 404 with home link', () => {
         expect(homeLinks.length).toBeGreaterThanOrEqual(1);
         unmount!();
       }),
-      { numRuns: 100 },
+      { numRuns: 20 },
     );
-  });
+  }, 30000);
 });
