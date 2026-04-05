@@ -1,15 +1,15 @@
 {
   "home": {
     "title": "Diego Emilio Barrera Hernandez — Software Engineer",
-    "description": "Personal portfolio of Diego Emilio Barrera Hernandez, Software Development Engineer specializing in AI, data science, and cloud-native systems."
+    "description": "Portfolio of Diego Emilio Barrera Hernandez, SDE at Amazon specializing in AI, data science, and scalable distributed systems."
   },
   "projects": {
     "title": "Projects — Diego Emilio Barrera Hernandez",
-    "description": "Explore impactful engineering projects spanning AI, cloud infrastructure, and scalable systems."
+    "description": "Engineering projects spanning KYC compliance, LATAM deployment, AI/ML forecasting, and academic software."
   },
   "blog": {
     "title": "Blog — Diego Emilio Barrera Hernandez",
-    "description": "Technical articles and engineering insights from building systems at scale."
+    "description": "Technical articles on software engineering, AI, and cloud architecture."
   },
   "contact": {
     "title": "Contact — Diego Emilio Barrera Hernandez",
