@@ -4,6 +4,7 @@ export interface Project {
   description: string;
   featured: boolean;
   techStack: string[];
+  repoUrl?: string;
   star: {
     situation: string;
     task: string;
@@ -44,10 +45,13 @@ export type SkillCategory =
   | 'Backend'
   | 'Databases'
   | 'Testing'
-  | 'Tools & Workflow';
+  | 'Tools & Workflow'
+  | 'Languages'
+  | 'Methodologies';
 
 export interface ContactInfo {
   email: string;
+  phone?: string;
   linkedin: string;
   github: string;
 }
