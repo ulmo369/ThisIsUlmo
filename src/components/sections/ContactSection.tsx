@@ -17,11 +17,17 @@ interface ContactMethod {
 
 /** Builds the list of contact methods from static data */
 function getContactMethods(): ContactMethod[] {
-  return [
+  const methods: ContactMethod[] = [
     { key: 'email', href: `mailto:${contactInfo.email}`, external: false },
+  ];
+  if (contactInfo.phone) {
+    methods.push({ key: 'phone', href: `tel:${contactInfo.phone}`, external: false });
+  }
+  methods.push(
     { key: 'linkedin', href: contactInfo.linkedin, external: true },
     { key: 'github', href: contactInfo.github, external: true },
-  ];
+  );
+  return methods;
 }
 
 export default function ContactSection() {
@@ -47,7 +53,7 @@ export default function ContactSection() {
           </motion.div>
 
           {/* Contact cards */}
-          <div className="grid gap-6 grid-cols-1 sm:grid-cols-3 max-w-3xl mx-auto w-full">
+          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 max-w-3xl mx-auto w-full">
             {methods.map((method) => (
               <motion.div key={method.key} variants={fadeInUp}>
                 <Card className="h-full flex flex-col items-center text-center gap-4">
