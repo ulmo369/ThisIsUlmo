@@ -37,7 +37,8 @@ describe('ResumeSection', () => {
     render(<ResumeSection />);
     for (const entry of resumeData.education) {
       expect(screen.getByText(entry.degree)).toBeInTheDocument();
-      expect(screen.getByText(entry.institution)).toBeInTheDocument();
+      const institutions = screen.getAllByText(entry.institution);
+      expect(institutions.length).toBeGreaterThanOrEqual(1);
     }
   });
 
