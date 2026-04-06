@@ -22,6 +22,8 @@ const categoryKeyMap: Record<SkillCategory, string> = {
   Databases: 'databases',
   Testing: 'testing',
   'Tools & Workflow': 'toolsWorkflow',
+  Languages: 'languages',
+  Methodologies: 'methodologies',
 };
 
 const CATEGORY_ORDER: SkillCategory[] = [
@@ -33,6 +35,8 @@ const CATEGORY_ORDER: SkillCategory[] = [
   'Databases',
   'Testing',
   'Tools & Workflow',
+  'Languages',
+  'Methodologies',
 ];
 
 /** Groups skills by category preserving defined order */
