@@ -1,15 +1,15 @@
 {
   "home": {
     "title": "Diego Emilio Barrera Hernandez — Ingeniero de Software",
-    "description": "Portafolio personal de Diego Emilio Barrera Hernandez, Ingeniero de Desarrollo de Software especializado en IA, ciencia de datos y sistemas nativos en la nube."
+    "description": "Portafolio de Diego Emilio Barrera Hernandez, SDE en Amazon especializado en IA, ciencia de datos y sistemas distribuidos escalables."
   },
   "projects": {
     "title": "Proyectos — Diego Emilio Barrera Hernandez",
-    "description": "Explora proyectos de ingeniería impactantes que abarcan IA, infraestructura en la nube y sistemas escalables."
+    "description": "Proyectos de ingeniería que abarcan cumplimiento KYC, despliegue LATAM, pronóstico IA/ML y software académico."
   },
   "blog": {
     "title": "Blog — Diego Emilio Barrera Hernandez",
-    "description": "Artículos técnicos y perspectivas de ingeniería al construir sistemas a escala."
+    "description": "Artículos técnicos sobre ingeniería de software, IA y arquitectura en la nube."
   },
   "contact": {
     "title": "Contacto — Diego Emilio Barrera Hernandez",
