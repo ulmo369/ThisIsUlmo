@@ -33,7 +33,10 @@ describe('HeroSection', () => {
     const contactLink = screen.getByText('common.buttons.contactMe').closest('a');
     expect(contactLink).toHaveAttribute('href', '/contact');
 
-    expect(screen.getByText('hero.cta.linkedin')).toBeInTheDocument();
+    const downloadBtn = screen.getByText('common.buttons.downloadResume');
+    expect(downloadBtn).toBeInTheDocument();
+    const downloadLink = downloadBtn.closest('a');
+    expect(downloadLink).toHaveAttribute('href', '/files/Emilio_resume.pdf');
   });
 
   it('renders inside a section with id "hero"', () => {

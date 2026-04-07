@@ -7,7 +7,6 @@ import enSkills from '../../../public/locales/en/skills.json';
 import enExperience from '../../../public/locales/en/experience.json';
 import enProjects from '../../../public/locales/en/projects.json';
 import enContact from '../../../public/locales/en/contact.json';
-import enResume from '../../../public/locales/en/resume.json';
 import enBlog from '../../../public/locales/en/blog.json';
 import enSeo from '../../../public/locales/en/seo.json';
 import enPersonal from '../../../public/locales/en/personal.json';
@@ -19,7 +18,6 @@ import esSkills from '../../../public/locales/es/skills.json';
 import esExperience from '../../../public/locales/es/experience.json';
 import esProjects from '../../../public/locales/es/projects.json';
 import esContact from '../../../public/locales/es/contact.json';
-import esResume from '../../../public/locales/es/resume.json';
 import esBlog from '../../../public/locales/es/blog.json';
 import esSeo from '../../../public/locales/es/seo.json';
 import esPersonal from '../../../public/locales/es/personal.json';
@@ -58,7 +56,6 @@ const namespaces: Record<string, { en: Record<string, TranslationValue>; es: Rec
   experience: { en: enExperience, es: esExperience },
   projects: { en: enProjects, es: esProjects },
   contact: { en: enContact, es: esContact },
-  resume: { en: enResume, es: esResume },
   blog: { en: enBlog, es: esBlog },
   seo: { en: enSeo, es: esSeo },
   personal: { en: enPersonal, es: esPersonal },

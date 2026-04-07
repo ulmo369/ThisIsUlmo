@@ -20,15 +20,25 @@ describe('ContactSection', () => {
     expect(screen.getByText('contact.subtitle')).toBeInTheDocument();
   });
 
-  it('renders email, linkedin, and github contact methods', () => {
+  it('renders icon links with aria-labels for email, linkedin, and github', () => {
     render(<ContactSection />);
-    const headings = screen.getAllByText(/contact\.(email|linkedin|github)/);
-    expect(headings.length).toBeGreaterThanOrEqual(3);
+    expect(screen.getByLabelText('contact.tooltips.email')).toBeInTheDocument();
+    expect(screen.getByLabelText('contact.tooltips.linkedin')).toBeInTheDocument();
+    expect(screen.getByLabelText('contact.tooltips.github')).toBeInTheDocument();
+  });
+
+  it('renders mailto and tel links', () => {
+    const { container } = render(<ContactSection />);
+    const mailtoLink = container.querySelector('a[href^="mailto:"]');
+    expect(mailtoLink).toBeInTheDocument();
+    const telLink = container.querySelector('a[href^="tel:"]');
+    expect(telLink).toBeInTheDocument();
   });
 
   it('renders external links with security attributes', () => {
     const { container } = render(<ContactSection />);
     const externalLinks = container.querySelectorAll('a[target="_blank"]');
+    expect(externalLinks.length).toBeGreaterThanOrEqual(2);
     externalLinks.forEach((link) => {
       expect(link).toHaveAttribute('rel', 'noopener noreferrer');
     });
