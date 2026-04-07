@@ -5,8 +5,9 @@ import type {
   ContactInfo,
   NavItem,
   SEOMeta,
-  ResumeData,
   PersonalInfo,
+  EducationEntry,
+  Award,
 } from '@/types';
 
 import { projects } from '@/data/projects';
@@ -15,7 +16,8 @@ import { skills } from '@/data/skills';
 import { contactInfo } from '@/data/contact';
 import { navigationItems } from '@/data/navigation';
 import { seoData } from '@/data/seo';
-import { resumeData } from '@/data/resume';
+import { education } from '@/data/education';
+import { awards } from '@/data/awards';
 import { personalInfo } from '@/data/personal';
 
 export async function getProjects(): Promise<Project[]> {
@@ -50,8 +52,12 @@ export async function getSEOMeta(route: string): Promise<SEOMeta> {
   return seoData[route] ?? seoData['/'];
 }
 
-export async function getResumeData(): Promise<ResumeData> {
-  return resumeData;
+export async function getEducation(): Promise<EducationEntry[]> {
+  return education;
+}
+
+export async function getAwards(): Promise<Award[]> {
+  return awards;
 }
 
 export async function getPersonalInfo(): Promise<PersonalInfo> {

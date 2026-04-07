@@ -7,8 +7,9 @@ import {
   getContactInfo,
   getNavigation,
   getSEOMeta,
-  getResumeData,
   getPersonalInfo,
+  getEducation,
+  getAwards,
 } from '@/lib/data';
 
 describe('Data access layer', () => {
@@ -74,18 +75,25 @@ describe('Data access layer', () => {
     expect(seo.title).toBe(rootSeo.title);
   });
 
-  it('getResumeData returns resume data', async () => {
-    const resume = await getResumeData();
-    expect(resume.summary).toBeDefined();
-    expect(resume.experience).toBeDefined();
-    expect(resume.education).toBeDefined();
-  });
-
-  it('getPersonalInfo returns personal info', async () => {
+  it('getPersonalInfo returns personal info with music', async () => {
     const info = await getPersonalInfo();
     expect(info.sports).toBeDefined();
     expect(info.books).toBeDefined();
     expect(info.games).toBeDefined();
+    expect(info.music).toBeDefined();
+    expect(Array.isArray(info.music)).toBe(true);
     expect(info.personality).toBeDefined();
+  });
+
+  it('getEducation returns education entries', async () => {
+    const edu = await getEducation();
+    expect(Array.isArray(edu)).toBe(true);
+    expect(edu.length).toBe(2);
+  });
+
+  it('getAwards returns award entries', async () => {
+    const aw = await getAwards();
+    expect(Array.isArray(aw)).toBe(true);
+    expect(aw.length).toBe(2);
   });
 });

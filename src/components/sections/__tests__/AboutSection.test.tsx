@@ -14,10 +14,10 @@ describe('AboutSection', () => {
     expect(container.querySelector('section#about')).toBeInTheDocument();
   });
 
-  it('renders title and intro', () => {
+  it('renders title, principlesTitle, and intro', () => {
     render(<AboutSection />);
-    const titles = screen.getAllByText('about.title');
-    expect(titles.length).toBeGreaterThanOrEqual(1);
+    expect(screen.getByText('about.title')).toBeInTheDocument();
+    expect(screen.getByText('about.principlesTitle')).toBeInTheDocument();
     expect(screen.getByText('about.intro')).toBeInTheDocument();
   });
 

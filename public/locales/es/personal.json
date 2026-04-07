@@ -1,24 +1,30 @@
 {
   "title": "¿Quién es Emilio?",
-  "subtitle": "Más allá del código — un vistazo a la persona detrás del ingeniero.",
+  "subtitle": "Más allá del código, un vistazo a la persona detrás del ingeniero",
   "sports": {
     "title": "Deportes",
-    "description": "El triatlón es mi pasión — en 2017 fui el mejor duatleta de mi categoría en México. También amo el gimnasio y la natación. Los deportes de resistencia me mantienen disciplinado y hambriento por el siguiente reto."
+    "description": "El triatlón es mi pasión, en 2017 fui el mejor duatleta de mi categoría en México. También amo el gimnasio y la natación. Los deportes de resistencia me mantienen disciplinado y hambriento por el siguiente reto"
   },
   "books": {
     "title": "Libros",
-    "description": "La Divina Comedia es mi favorito de todos los tiempos. Soy devoto de Tolkien — El Hobbit y todo el universo de la Tierra Media alimentan mi imaginación."
+    "description": "La Divina Comedia es mi favorito de todos los tiempos. Soy devoto de Tolkien, El Hobbit y todo el universo de la Tierra Media alimentan mi imaginación"
   },
   "games": {
     "title": "Videojuegos",
-    "description": "Fan de Zelda (Majora's Mask es el mejor, peleen conmigo). Metroid Prime tiene un lugar especial. En 2019 fui el mejor Samus de mi estado en Super Smash Bros Ultimate. Mario Kart para el caos."
+    "description": "Fan de Zelda (Majora's Mask es el mejor, peleen conmigo). Metroid Prime tiene un lugar especial. En 2019 fui el mejor Samus de mi estado en Super Smash Bros Ultimate. Mario Kart para el caos"
   },
   "music": {
     "title": "Música",
-    "description": "Metal y folk metal — me encanta la narrativa épica. He ido a más de 100 conciertos y he visto más de 150 bandas en vivo. Si hay mosh pit, probablemente estoy ahí."
+    "description": "Metal y folk metal, me encanta la narrativa épica. He ido a más de 100 conciertos y he visto más de 150 bandas en vivo. Si hay mosh pit, probablemente estoy ahí"
   },
   "personality": {
     "title": "Personalidad",
-    "description": "Competitivo, apasionado y siempre buscando la siguiente aventura. Ya sea un triatlón, un torneo de Smash o un concierto de metal — voy con todo."
+    "description": "Competitivo, apasionado y siempre buscando la siguiente aventura. Ya sea un triatlón, un torneo de Smash o un concierto de metal, voy con todo"
+  },
+  "education": {
+    "title": "Educación"
+  },
+  "awards": {
+    "title": "Premios"
   }
 }

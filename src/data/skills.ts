@@ -8,11 +8,11 @@ export const skills: Skill[] = [
   { name: 'JavaScript', category: 'Programming Languages', proficiency: 'experienced' },
   { name: 'Kotlin', category: 'Programming Languages', proficiency: 'experienced' },
   { name: 'PHP', category: 'Programming Languages', proficiency: 'experienced' },
-  { name: 'Java', category: 'Programming Languages', proficiency: 'familiar' },
+  { name: 'Java', category: 'Programming Languages', proficiency: 'experienced' },
+  { name: 'Bash', category: 'Programming Languages', proficiency: 'experienced' },
   { name: 'R', category: 'Programming Languages', proficiency: 'familiar' },
   { name: 'C#', category: 'Programming Languages', proficiency: 'familiar' },
   { name: 'C', category: 'Programming Languages', proficiency: 'familiar' },
-  { name: 'Bash', category: 'Programming Languages', proficiency: 'experienced' },
 
   // Cloud & Infrastructure
   { name: 'AWS', category: 'Cloud & Infrastructure', proficiency: 'core' },
@@ -71,6 +71,6 @@ export const skills: Skill[] = [
   { name: 'Lean', category: 'Methodologies', proficiency: 'experienced' },
   { name: 'CRISP-DM', category: 'Methodologies', proficiency: 'experienced' },
   { name: 'Kanban', category: 'Methodologies', proficiency: 'experienced' },
-  { name: 'CMMI', category: 'Methodologies', proficiency: 'familiar' },
+  { name: 'CMMI', category: 'Methodologies', proficiency: 'experienced' },
   { name: 'RACI Matrix', category: 'Methodologies', proficiency: 'familiar' },
 ];

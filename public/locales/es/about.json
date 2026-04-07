@@ -1,18 +1,19 @@
 {
   "title": "Sobre Mí",
-  "intro": "Ingeniero en Tecnologías Computacionales con experiencia en ciencia de datos y desarrollo de sistemas. Lidero equipos hacia objetivos claros y me desenvuelvo en ambientes dinámicos aplicando expertise técnico para resolver nuevos desafíos.",
+  "intro": "Ingeniero en Ciencias Computacionales con experiencia en ciencia de datos y desarrollo de sistemas. Lidero equipos hacia objetivos claros y me desenvuelvo en ambientes dinámicos aplicando expertise técnico para resolver nuevos desafíos",
   "mindset": {
     "title": "Mentalidad de Ingeniería",
-    "description": "Creo en entender los problemas profundamente antes de escribir una sola línea de código. Cada sistema que construyo comienza con claridad sobre restricciones, compromisos y mantenibilidad a largo plazo."
+    "description": "Diseñar sistemas entendiendo los problemas profundamente antes de escribir una sola línea de código. Cada sistema comienza con claridad sobre restricciones, compromisos y mantenibilidad a largo plazo"
   },
   "leadership": {
     "title": "Liderazgo",
-    "description": "Liderar a través de la excelencia técnica y la mentoría. Ayudo a los equipos a entregar software de alta calidad fomentando una cultura de revisiones de código, intercambio de conocimientos y mejora continua."
+    "description": "Liderar a través de la excelencia técnica y la mentoría. Ayudo a los equipos a entregar software de alta calidad fomentando una cultura de revisiones de código, intercambio de conocimientos y mejora continua"
   },
   "systems": {
     "title": "Pensamiento Sistémico",
-    "description": "Diseñar con el panorama general en mente. Considero cómo interactúan los componentes, dónde surgen los cuellos de botella y cómo evolucionan los sistemas con el tiempo."
+    "description": "Diseñar con el panorama general en mente. Considero cómo interactúan los componentes, dónde surgen los cuellos de botella y cómo evolucionan los sistemas con el tiempo"
   },
+  "principlesTitle": "Mis Principios",
   "principles": {
     "simplicity": "Simplicidad sobre complejidad",
     "maintainable": "Código mantenible",

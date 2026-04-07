@@ -21,14 +21,15 @@ describe('PersonalSection', () => {
     expect(screen.getByText('personal.subtitle')).toBeInTheDocument();
   });
 
-  it('renders sports, books, and games category cards', () => {
+  it('renders sports, books, games, and music category cards', () => {
     render(<PersonalSection />);
     expect(screen.getByText('personal.sports.title')).toBeInTheDocument();
     expect(screen.getByText('personal.books.title')).toBeInTheDocument();
     expect(screen.getByText('personal.games.title')).toBeInTheDocument();
+    expect(screen.getByText('personal.music.title')).toBeInTheDocument();
   });
 
-  it('renders personal data items as badges', () => {
+  it('renders personal data items as badges including music', () => {
     render(<PersonalSection />);
     for (const sport of personalInfo.sports) {
       expect(screen.getByText(sport)).toBeInTheDocument();
@@ -36,6 +37,19 @@ describe('PersonalSection', () => {
     for (const game of personalInfo.games) {
       expect(screen.getByText(game)).toBeInTheDocument();
     }
+    for (const item of personalInfo.music) {
+      expect(screen.getByText(item)).toBeInTheDocument();
+    }
+  });
+
+  it('renders education sub-section', () => {
+    render(<PersonalSection />);
+    expect(screen.getByText('personal.education.title')).toBeInTheDocument();
+  });
+
+  it('renders awards sub-section', () => {
+    render(<PersonalSection />);
+    expect(screen.getByText('personal.awards.title')).toBeInTheDocument();
   });
 
   it('renders personality section', () => {

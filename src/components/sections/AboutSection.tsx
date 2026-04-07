@@ -45,7 +45,7 @@ export default function AboutSection() {
 
           <motion.div variants={fadeInUp}>
             <Heading level={3} className="text-center mb-6">
-              {t('title')}
+              {t('principlesTitle')}
             </Heading>
             <div className="grid gap-4 sm:grid-cols-3">
               {principleKeys.map((key) => (

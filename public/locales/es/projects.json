@@ -1,6 +1,6 @@
 {
   "title": "Proyectos",
-  "subtitle": "Una selección de proyectos impactantes que muestran ingeniería de extremo a extremo.",
+  "subtitle": "Una selección de proyectos impactantes que muestran ingeniería de extremo a extremo",
   "featured": "Proyectos Destacados",
   "other": "Otros Proyectos",
   "viewAll": "Ver Todos los Proyectos",
@@ -21,6 +21,6 @@
   },
   "backToProjects": "Volver a Proyectos",
   "notFound": "Proyecto no encontrado",
-  "notFoundDescription": "El proyecto que buscas no existe o ha sido eliminado.",
+  "notFoundDescription": "El proyecto que buscas no existe o ha sido eliminado",
   "diagramPlaceholder": "Diagrama de arquitectura próximamente"
 }

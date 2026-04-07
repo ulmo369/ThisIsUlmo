@@ -13,7 +13,6 @@ import AboutSection from '@/components/sections/AboutSection'
 import SkillsSection from '@/components/sections/SkillsSection'
 import ExperienceSection from '@/components/sections/ExperienceSection'
 import ProjectsSection from '@/components/sections/ProjectsSection'
-import ResumeSection from '@/components/sections/ResumeSection'
 import ContactSection from '@/components/sections/ContactSection'
 import PersonalSection from '@/components/sections/PersonalSection'
 
@@ -177,7 +176,6 @@ export default function ComponentsView() {
         <SkillsSection />
         <ExperienceSection />
         <ProjectsSection />
-        <ResumeSection />
         <PersonalSection />
         <ContactSection />
 
