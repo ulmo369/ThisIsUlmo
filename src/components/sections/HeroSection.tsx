@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { fadeInUp } from '@/lib/motion';
-import { contactInfo } from '@/data/contact';
 import Section from '@/components/ui/Section';
 import Container from '@/components/ui/Container';
 import Heading from '@/components/ui/Heading';
@@ -53,10 +52,10 @@ export default function HeroSection() {
             <Button
               variant="ghost"
               size="lg"
-              href={contactInfo.linkedin}
+              href="/files/Emilio_resume.pdf"
               external
             >
-              {tHero('cta.linkedin')}
+              {tCommon('buttons.downloadResume')}
             </Button>
           </div>
         </motion.div>

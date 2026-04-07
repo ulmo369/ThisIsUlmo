@@ -78,6 +78,22 @@ export default function SkillsSection() {
             </p>
           </motion.div>
 
+          {/* Proficiency legend */}
+          <motion.div
+            variants={fadeInUp}
+            className="flex flex-wrap items-center justify-center gap-4 text-sm text-gray-500 dark:text-gray-400"
+          >
+            <div className="flex items-center gap-2">
+              <Badge label={t('proficiency.core')} variant="core" />
+            </div>
+            <div className="flex items-center gap-2">
+              <Badge label={t('proficiency.experienced')} variant="experienced" />
+            </div>
+            <div className="flex items-center gap-2">
+              <Badge label={t('proficiency.familiar')} variant="familiar" />
+            </div>
+          </motion.div>
+
           {/* Core stack highlight */}
           <motion.div variants={fadeInUp}>
             <div className="flex flex-wrap items-center justify-center gap-3">
@@ -116,22 +132,6 @@ export default function SkillsSection() {
               );
             })}
           </div>
-
-          {/* Proficiency legend */}
-          <motion.div
-            variants={fadeInUp}
-            className="flex flex-wrap items-center justify-center gap-4 text-sm text-gray-500 dark:text-gray-400"
-          >
-            <div className="flex items-center gap-2">
-              <Badge label={t('proficiency.core')} variant="core" />
-            </div>
-            <div className="flex items-center gap-2">
-              <Badge label={t('proficiency.experienced')} variant="experienced" />
-            </div>
-            <div className="flex items-center gap-2">
-              <Badge label={t('proficiency.familiar')} variant="familiar" />
-            </div>
-          </motion.div>
         </motion.div>
       </Container>
     </Section>
