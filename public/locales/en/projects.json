@@ -1,6 +1,6 @@
 {
   "title": "Projects",
-  "subtitle": "A selection of impactful projects showcasing end-to-end engineering.",
+  "subtitle": "A selection of impactful projects showcasing end-to-end engineering",
   "featured": "Featured Projects",
   "other": "Other Projects",
   "viewAll": "View All Projects",
@@ -21,6 +21,6 @@
   },
   "backToProjects": "Back to Projects",
   "notFound": "Project not found",
-  "notFoundDescription": "The project you're looking for doesn't exist or has been removed.",
+  "notFoundDescription": "The project you're looking for doesn't exist or has been removed",
   "diagramPlaceholder": "Architecture diagram coming soon"
 }

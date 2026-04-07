@@ -1,24 +1,30 @@
 {
   "title": "Who is Emilio",
-  "subtitle": "Beyond the code — a glimpse into the person behind the engineer.",
+  "subtitle": "Beyond the code, a glimpse into the person behind the engineer",
   "sports": {
     "title": "Sports",
-    "description": "Triathlon is my passion — in 2017 I was the best duathlete in my category in Mexico. I also love gym and swimming. Endurance sports keep me disciplined and hungry for the next challenge."
+    "description": "Triathlon is my passion, in 2017 I was the best duathlete in my category in Mexico. I also love gym and swimming. Endurance sports keep me disciplined and hungry for the next challenge"
   },
   "books": {
     "title": "Books",
-    "description": "La Divina Comedia is my all-time favorite. I'm a devoted Tolkien fan — The Hobbit and the entire Middle-earth universe fuel my imagination."
+    "description": "The Divine Comedy is my all-time favorite. I'm a devoted Tolkien fan, The Hobbit and the entire Middle-earth universe fuel my imagination"
   },
   "games": {
     "title": "Games",
-    "description": "Zelda fan (Majora's Mask is the best one, fight me). Metroid Prime holds a special place. In 2019 I was the best Samus in my state in Super Smash Bros Ultimate. Mario Kart for the chaos."
+    "description": "Zelda fan (Majora's Mask is the best one, fight me). Metroid Prime holds a special place. In 2019 I was the best Samus in my state in Super Smash Bros Ultimate. Mario Kart for the chaos"
   },
   "music": {
     "title": "Music",
-    "description": "Metal and folk metal — I love the epic storytelling. I've been to 100+ concerts and seen 150+ bands live. If there's a mosh pit, I'm probably in it."
+    "description": "Metal and folk metal, I love the epic storytelling. I've been to 100+ concerts and seen 150+ bands live. If there's a mosh pit, I'm probably in it"
   },
   "personality": {
     "title": "Personality",
-    "description": "Competitive, passionate, and always looking for the next adventure. Whether it's a triathlon, a Smash tournament, or a metal concert — I go all in."
+    "description": "Competitive, passionate, and always looking for the next adventure. Whether it's a triathlon, a Smash tournament, or a metal concert, I go all in"
+  },
+  "education": {
+    "title": "Education"
+  },
+  "awards": {
+    "title": "Awards"
   }
 }
