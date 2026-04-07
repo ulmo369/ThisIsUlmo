@@ -91,17 +91,10 @@ export interface Award {
   year?: string;
 }
 
-export interface ResumeData {
-  summary: string;
-  experience: ExperienceEntry[];
-  education: EducationEntry[];
-  skills: Skill[];
-  awards?: Award[];
-}
-
 export interface PersonalInfo {
   sports: string[];
   books: string[];
   games: string[];
+  music: string[];
   personality: string;
 }
