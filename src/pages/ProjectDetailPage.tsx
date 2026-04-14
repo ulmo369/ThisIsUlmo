@@ -74,6 +74,13 @@ export default function ProjectDetailPage() {
             <p className="mt-4 text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               {project.description}
             </p>
+            {project.repoUrl && (
+              <div className="mt-4">
+                <Button variant="outline" href={project.repoUrl} external>
+                  {t('viewCode')}
+                </Button>
+              </div>
+            )}
           </motion.div>
 
           {/* Tech stack */}

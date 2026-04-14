@@ -22,5 +22,6 @@
   "backToProjects": "Back to Projects",
   "notFound": "Project not found",
   "notFoundDescription": "The project you're looking for doesn't exist or has been removed",
-  "diagramPlaceholder": "Architecture diagram coming soon"
+  "diagramPlaceholder": "Architecture diagram coming soon",
+  "viewCode": "View Source Code"
 }
