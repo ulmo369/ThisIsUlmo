@@ -128,7 +128,7 @@ export const projects: Project[] = [
     description: 'Urban mobility simulation using a multi-agent system to model traffic patterns and optimize flow in Mexican cities',
     featured: false,
     techStack: ['Python', 'Mesa', 'Pandas', 'OOP'],
-    repoUrl: 'https://github.com/ulmo369/Projects_Evidence',
+    repoUrl: 'https://github.com/ulmo369/Projects_Evidence/tree/master/MultiAgents',
     star: {
       situation: 'Urban mobility is a significant challenge in Mexican cities, requiring data-driven approaches to understand and optimize traffic flow',
       task: 'Design and implement a graphical traffic simulation using a multi-agent system with autonomous vehicle and traffic light agents',
@@ -172,7 +172,7 @@ export const projects: Project[] = [
     description: 'Mobile marketplace connecting people seeking architects and plumbers with workers and distributors in the construction industry',
     featured: false,
     techStack: ['Kotlin', 'Android SDK'],
-    repoUrl: 'https://github.com/ulmo369/Projects_Evidence',
+    repoUrl: 'https://github.com/ulmo369/Projects_Evidence/tree/master/App',
     star: {
       situation: 'The construction services market lacked a centralized platform for connecting service seekers with architects, plumbers, and material distributors',
       task: 'Build a mobile application serving as a marketplace and social network for construction services, connecting clients with workers and distributors',
@@ -194,7 +194,7 @@ export const projects: Project[] = [
     description: 'Lexical analyzer for the Scheme programming language that tokenizes input and generates syntax-highlighted HTML/CSS output',
     featured: false,
     techStack: ['C++', 'HTML', 'CSS', 'Regex'],
-    repoUrl: 'https://github.com/ulmo369/Projects_Evidence',
+    repoUrl: 'https://github.com/ulmo369/Projects_Evidence/tree/master/Lexer',
     star: {
       situation: 'Understanding lexical analysis is fundamental to compiler design and language processing',
       task: 'Build a lexer for the Scheme programming language that reads source files and produces syntax-highlighted HTML output',
@@ -216,7 +216,7 @@ export const projects: Project[] = [
     description: 'Interactive fighting game simulation with Smash Bros-inspired mechanics including tilt attacks, smash attacks, critical hits, and damage percentages',
     featured: false,
     techStack: ['C++', 'OOP (Inheritance, Polymorphism, Composition)'],
-    repoUrl: 'https://github.com/ulmo369/Projects_Evidence',
+    repoUrl: 'https://github.com/ulmo369/Projects_Evidence/tree/master/OOP2',
     star: {
       situation: 'Advanced OOP concepts are best learned through complex, interactive projects that require multiple design patterns',
       task: 'Design and implement an interactive fighting game simulation demonstrating advanced OOP principles including inheritance, polymorphism, pointers, composition, and abstraction',
