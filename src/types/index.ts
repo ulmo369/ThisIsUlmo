@@ -1,33 +1,15 @@
 export interface Project {
   slug: string;
-  title: string;
-  description: string;
   featured: boolean;
   techStack: string[];
   repoUrl?: string;
-  star: {
-    situation: string;
-    task: string;
-    action: string;
-    result: string;
-  };
-  metrics?: string[];
   diagramPlaceholder?: boolean;
-  engineeringHighlights: {
-    decisions: string[];
-    tradeoffs: string[];
-    constraints: string[];
-    scalability: string[];
-  };
 }
 
 export interface ExperienceEntry {
   id: string;
   company: string;
-  role: string;
   period: string;
-  description: string;
-  metrics: string[];
   isPrimary: boolean;
 }
 
@@ -79,15 +61,13 @@ export interface SEOMeta {
 }
 
 export interface EducationEntry {
+  id: string;
   institution: string;
   degree: string;
-  period: string;
-  description?: string;
 }
 
 export interface Award {
-  title: string;
-  description: string;
+  id: string;
   year?: string;
 }
 
@@ -96,5 +76,4 @@ export interface PersonalInfo {
   books: string[];
   games: string[];
   music: string[];
-  personality: string;
 }
