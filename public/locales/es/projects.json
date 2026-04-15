@@ -23,5 +23,105 @@
   "notFound": "Proyecto no encontrado",
   "notFoundDescription": "El proyecto que buscas no existe o ha sido eliminado",
   "diagramPlaceholder": "Diagrama de arquitectura próximamente",
-  "viewCode": "Ver Código Fuente"
+  "viewCode": "Ver Código Fuente",
+  "kyc-integration": {
+    "title": "Integración KYC, Cumplimiento de Transportistas en México",
+    "description": "Identifiqué y resolví una brecha crítica de diseño en el flujo de verificación KYC para envíos de EE.UU. a México, previniendo $2.8B en pérdidas potenciales",
+    "star": {
+      "situation": "Amazon necesitaba habilitar un plug-in KYC que requería verificación RFC para ciudadanos mexicanos que recibían envíos EE.UU. → Transportista → México. El diseño heredado asumía un flujo directo EE.UU. → Transportista → MX",
+      "task": "Validar el diseño existente del sistema, implementar la lógica de integración KYC y asegurar el cumplimiento para todas las rutas de envío hacia México",
+      "action": "Realicé una evaluación independiente del diseño heredado y descubrí que México usaba un flujo EE.UU. → Transportista1 → Amazon Carrier → MX, un caso de uso que la lógica existente no soportaba. Rediseñé la integración para manejar la cadena real de transportistas, implementé el nuevo flujo y coordiné con los equipos de transportistas (Redpack, Estafeta) para validar de extremo a extremo",
+      "result": "Lancé exitosamente la integración KYC cubriendo el flujo correcto de transportistas. Previne $2.8B en pérdidas potenciales por envíos no conformes. Establecí un precedente para la validación independiente de diseño en sistemas heredados"
+    },
+    "metrics": [
+      "$2.8B en pérdidas potenciales prevenidas",
+      "Nuevo flujo de transportistas descubierto e implementado",
+      "Cumplimiento de extremo a extremo validado"
+    ],
+    "engineeringHighlights": {
+      "decisions": [
+        "Realicé evaluación independiente del diseño en lugar de confiar en documentación heredada",
+        "Coordiné directamente con socios transportistas para validar los flujos reales de envío"
+      ],
+      "tradeoffs": [
+        "Invertí tiempo adicional en validación de diseño por adelantado para evitar problemas costosos en producción",
+        "Elegí rediseñar el flujo en lugar de parchar la lógica existente para corrección a largo plazo"
+      ],
+      "constraints": [
+        "El diseño heredado del sistema asumía una ruta de transportista única que no coincidía con la realidad",
+        "El cumplimiento regulatorio requería verificación RFC para todos los envíos hacia México"
+      ],
+      "scalability": [
+        "El nuevo diseño soporta cadenas de transportistas adicionales sin cambios de código",
+        "Marco de validación reutilizable para futuras expansiones de mercado"
+      ]
+    }
+  },
+  "subscription-campaigns": {
+    "title": "Despliegue de Campañas de Suscripción, Expansión LATAM",
+    "description": "Diseñé y ejecuté la estrategia de despliegue para campañas de suscripción en México y Brasil, previniendo $7M+ en pérdidas potenciales mediante una planificación meticulosa de reversión",
+    "star": {
+      "situation": "Amazon necesitaba extender las campañas de suscripción para vendedores (similar a Prime para vendedores) a México y Brasil. Los sistemas de pruebas beta eran inestables, los procesos de QA habían cambiado recientemente y México requería dos flujos de prueba separados",
+      "task": "Diseñar una estrategia de despliegue con planificación integral de reversión, analizar patrones de creación de vendedores para determinar el momento óptimo de lanzamiento y asegurar la estabilidad de las campañas en ambos mercados",
+      "action": "Analicé picos y valles históricos de creación de vendedores para identificar las ventanas de despliegue más seguras. Diseñé una estrategia de lanzamiento por fases con disparadores automáticos de reversión. Cuando el sistema de pruebas falló completamente antes de la entrega, propuse extender una campaña existente como solución puente. Mantuve comunicación constante con las partes interesadas entre equipos",
+      "result": "Desplegué exitosamente las campañas de suscripción en ambos mercados. Previne $7M+ en pérdidas potenciales mediante análisis proactivo de riesgos y planificación de reversión. Establecí un manual de despliegue reutilizado para lanzamientos posteriores en mercados LATAM"
+    },
+    "metrics": [
+      "$7M+ en pérdidas potenciales prevenidas",
+      "2 mercados lanzados (MX y BR)",
+      "Manual de despliegue establecido"
+    ],
+    "engineeringHighlights": {
+      "decisions": [
+        "Analicé patrones de creación de vendedores para programar el despliegue durante ventanas de bajo riesgo",
+        "Propuse extensión de campaña como solución puente cuando la infraestructura de pruebas falló"
+      ],
+      "tradeoffs": [
+        "Acepté un cronograma de despliegue más largo para reducir riesgo mediante lanzamiento por fases",
+        "Elegí pasos de validación manual donde las pruebas automatizadas no estaban disponibles"
+      ],
+      "constraints": [
+        "Los sistemas de pruebas beta eran inestables y fallaron completamente antes de la entrega",
+        "México requería dos flujos de prueba separados a diferencia de otros mercados"
+      ],
+      "scalability": [
+        "Manual de despliegue parametrizado para futuras expansiones en mercados LATAM",
+        "Disparadores de reversión diseñados para ser agnósticos al mercado"
+      ]
+    }
+  },
+  "aviation-forecast": {
+    "title": "Pronóstico de Sistemas de Aviación, Predicción de Estabilidad de Crucero",
+    "description": "Construí un modelo de IA/ML para General Electric para predecir puntos de entrada de estabilidad de crucero en aeronaves, logrando 86% de precisión balanceada en 36 GB de datos de vuelo",
+    "star": {
+      "situation": "General Electric necesitaba un modelo predictivo para determinar cuándo las aeronaves entran en fase de crucero estable, usando 36 GB de datos históricos de vuelo de múltiples tipos de aeronaves",
+      "task": "Seguir la metodología CRISP-DM de extremo a extremo para construir, evaluar y entregar un modelo de predicción listo para producción con la mayor precisión balanceada posible",
+      "action": "Ejecuté el pipeline completo de CRISP-DM: comprensión de datos, preparación, modelado, evaluación y despliegue. Implementé y comparé múltiples arquitecturas de modelos incluyendo XGBoost, Redes Neuronales (LSTM y Dense), Regresión Logística y LightGBM. Realicé ingeniería de características extensiva y ajuste de hiperparámetros",
+      "result": "Logré 86% de precisión balanceada (mejor: 86.77%) con el modelo de Red Neuronal, superando significativamente los enfoques base. Entregué un pipeline de modelo completo siguiendo la metodología CRISP-DM"
+    },
+    "metrics": [
+      "86% de precisión balanceada",
+      "36 GB de datos de vuelo procesados",
+      "5 arquitecturas de modelos comparadas",
+      "Pipeline CRISP-DM completo"
+    ],
+    "engineeringHighlights": {
+      "decisions": [
+        "Comparé 5 arquitecturas de modelos para encontrar la mejor adaptación a las características de los datos",
+        "Seleccioné Red Neuronal (Dense + LSTM) como modelo final basado en la métrica de precisión balanceada"
+      ],
+      "tradeoffs": [
+        "Elegí precisión balanceada sobre precisión bruta para manejar el desbalance de clases en fases de vuelo",
+        "Invertí en comparaciones de múltiples modelos en lugar de optimizar una sola arquitectura"
+      ],
+      "constraints": [
+        "Los datos privados del cliente requerían manejo seguro y no podían salir de la infraestructura de GE",
+        "El conjunto de datos de 36 GB requería diseño eficiente del pipeline de datos para experimentación iterativa"
+      ],
+      "scalability": [
+        "Pipeline de modelo diseñado para reentrenamiento con nuevos lotes de datos de vuelo",
+        "Pipeline de ingeniería de características reutilizable para diferentes tipos de aeronaves"
+      ]
+    }
+  }
 }
