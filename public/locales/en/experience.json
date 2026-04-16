@@ -6,5 +6,20 @@
     "impact": "$2.8B Protected",
     "saved": "$7M+ Protected",
     "tickets": "80%+ Tickets Resolved"
+  },
+  "amazon-sde": {
+    "role": "Software Development Engineer I",
+    "description": "Building and maintaining scalable distributed systems for compliance and seller operations. Identified critical design gaps in inherited KYC integration logic, designed deployment strategies for subscription campaigns across Latin America, and resolved 80%+ on-call tickets autonomously",
+    "metrics": ["$2.8B in potential losses prevented", "$7M+ in potential losses prevented", "80%+ on-call tickets resolved"]
+  },
+  "psl-intern": {
+    "role": "Application Developer Intern",
+    "description": "Full-stack development of pharmaceutical management systems using PHP, TypeScript, JavaScript, and React. Delivered results through Scrum methodology, leveraging AWS services including CodeCommit, and working with SQL/NoSQL databases",
+    "metrics": ["Full-stack pharmaceutical systems", "Scrum delivery", "AWS + SQL/NoSQL"]
+  },
+  "ge-intern": {
+    "role": "Aviation Systems Intern",
+    "description": "Programmed and tested automatic control codes for aircraft systems (E747, E737). Performed black-box and white-box testing, applied Scrum and Lean methodologies, and conducted software requirements analysis using IBM DOORS",
+    "metrics": ["Aircraft systems (E747, E737)", "Black-box & white-box testing", "IBM DOORS analysis"]
   }
 }
