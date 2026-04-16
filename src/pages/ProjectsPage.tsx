@@ -14,28 +14,34 @@ import type { Project } from '@/types';
 
 /** Renders a project card linking to its detail page */
 function ProjectCard({ project }: { project: Project }) {
+  const { t } = useTranslation('projects');
+
   return (
     <motion.div variants={fadeInUp}>
       <Link to={`/projects/${project.slug}`} className="block h-full">
         <Card hoverable className="h-full flex flex-col">
           <Heading level={3} className="mb-2">
-            {project.title}
+            {t(`${project.slug}.title`)}
           </Heading>
           <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4 flex-1">
-            {project.description}
+            {t(`${project.slug}.description`)}
           </p>
           <div className="flex flex-wrap gap-1.5 mb-4">
             {project.techStack.map((tech) => (
               <Badge key={tech} label={tech} variant="default" />
             ))}
           </div>
-          {project.metrics && project.metrics.length > 0 && (
-            <div className="flex flex-wrap gap-2 pt-3 border-t border-gray-200 dark:border-gray-700">
-              {project.metrics.map((metric) => (
-                <Badge key={metric} label={metric} variant="core" />
-              ))}
-            </div>
-          )}
+          {(() => {
+            const metrics = t(`${project.slug}.metrics`, { returnObjects: true });
+            const metricsArr = Array.isArray(metrics) ? metrics : [];
+            return metricsArr.length > 0 ? (
+              <div className="flex flex-wrap gap-2 pt-3 border-t border-gray-200 dark:border-gray-700">
+                {metricsArr.map((metric: string) => (
+                  <Badge key={metric} label={metric} variant="core" />
+                ))}
+              </div>
+            ) : null;
+          })()}
         </Card>
       </Link>
     </motion.div>
