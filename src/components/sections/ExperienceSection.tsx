@@ -34,7 +34,7 @@ function TimelineEntry({ entry }: { entry: ExperienceEntry }) {
         <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <Heading level={3} className={entry.isPrimary ? 'text-primary-600 dark:text-primary-400' : ''}>
-              {entry.role}
+              {t(`${entry.id}.role`)}
             </Heading>
             <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
               {entry.company}
@@ -46,20 +46,24 @@ function TimelineEntry({ entry }: { entry: ExperienceEntry }) {
         </div>
 
         <p className="mt-3 text-gray-700 dark:text-gray-300 leading-relaxed">
-          {entry.description}
+          {t(`${entry.id}.description`)}
         </p>
 
-        {entry.metrics.length > 0 && (
-          <div className="mt-4 flex flex-wrap gap-2">
-            {entry.metrics.map((metric) => (
-              <Badge
-                key={metric}
-                label={metric}
-                variant={entry.isPrimary ? 'core' : 'default'}
-              />
-            ))}
-          </div>
-        )}
+        {(() => {
+          const metrics = t(`${entry.id}.metrics`, { returnObjects: true });
+          const metricsArr = Array.isArray(metrics) ? metrics : [];
+          return metricsArr.length > 0 ? (
+            <div className="mt-4 flex flex-wrap gap-2">
+              {metricsArr.map((metric: string) => (
+                <Badge
+                  key={metric}
+                  label={metric}
+                  variant={entry.isPrimary ? 'core' : 'default'}
+                />
+              ))}
+            </div>
+          ) : null;
+        })()}
       </article>
     </motion.div>
   );
