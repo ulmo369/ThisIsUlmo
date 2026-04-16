@@ -94,9 +94,19 @@ function CopyButton({ value, label }: { value: string; label: string }) {
             <motion.span
               key={streak}
               initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 + streak * 0.04 }}
+              animate={
+                streak >= 8
+                  ? { opacity: 1, scale: 1.35, x: [0, -4, 4, -4, 4, -2, 2, 0], y: [0, -2, 2, -2, 2, 0] }
+                  : streak >= 7
+                    ? { opacity: 1, scale: 1.3, x: [0, -2, 2, -2, 2, 0] }
+                    : { opacity: 1, scale: 1 + streak * 0.04 }
+              }
               exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.15 }}
+              transition={
+                streak >= 7
+                  ? { duration: 0.4, x: { repeat: Infinity, duration: 0.3 }, y: { repeat: Infinity, duration: 0.4 } }
+                  : { duration: 0.15 }
+              }
               className="text-xs text-primary-500 dark:text-primary-400 whitespace-nowrap font-medium text-center"
             >
               {message}
