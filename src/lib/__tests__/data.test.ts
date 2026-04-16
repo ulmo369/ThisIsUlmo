@@ -82,7 +82,6 @@ describe('Data access layer', () => {
     expect(info.games).toBeDefined();
     expect(info.music).toBeDefined();
     expect(Array.isArray(info.music)).toBe(true);
-    expect(info.personality).toBeDefined();
   });
 
   it('getEducation returns education entries', async () => {

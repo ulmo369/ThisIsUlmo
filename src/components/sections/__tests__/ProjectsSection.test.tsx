@@ -32,17 +32,17 @@ describe('ProjectsSection', () => {
     expect(screen.getByText('projects.subtitle')).toBeInTheDocument();
   });
 
-  it('renders only featured project cards', () => {
+  it('renders only featured project cards with translated titles', () => {
     renderWithRouter();
     for (const project of featured) {
-      expect(screen.getByText(project.title)).toBeInTheDocument();
+      expect(screen.getByText(`projects.${project.slug}.title`)).toBeInTheDocument();
     }
   });
 
   it('renders project card links pointing to /projects/:slug', () => {
     renderWithRouter();
     for (const project of featured) {
-      const link = screen.getByText(project.title).closest('a');
+      const link = screen.getByText(`projects.${project.slug}.title`).closest('a');
       expect(link).toHaveAttribute('href', `/projects/${project.slug}`);
     }
   });
