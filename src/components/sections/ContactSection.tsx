@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MdEmail, MdPhone, MdContentCopy } from 'react-icons/md';
@@ -32,46 +32,52 @@ function getContactMethods(): ContactMethod[] {
   return methods;
 }
 
+const STREAK_MESSAGES = [
+  '',
+  'double!!',
+  'triple!!',
+  'dominating!!',
+  'exterminio!!',
+  'masacre!!!',
+  'imparable!!!!',
+  'DIOS!!!!!',
+  'POR ENCIMA DE DIOS!!!!!!',
+];
+
 function CopyButton({ value, label }: { value: string; label: string }) {
   const [streak, setStreak] = useState(0);
   const [visible, setVisible] = useState(false);
-  const timerRef = useState<ReturnType<typeof setTimeout> | null>(null);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const streakMessages = [
-    label,
-    `${label} double!!`,
-    `${label} triple!!`,
-    `${label} dominating!!`,
-    `${label} exterminio!!`,
-    `${label} masacre!!!`,
-    `${label} imparable!!!!`,
-    `${label} DIOS!!!!!`,
-    `${label} POR ENCIMA DE DIOS!!!!!!`,
-  ];
-
-  const handleCopy = async () => {
+  const handleCopy = useCallback(async () => {
     try {
       await navigator.clipboard.writeText(value);
-
-      if (timerRef[0]) clearTimeout(timerRef[0]);
-
-      setStreak((prev) => Math.min(prev + 1, streakMessages.length - 1));
-      setVisible(true);
-
-      const timer = setTimeout(() => {
-        setVisible(false);
-        setTimeout(() => setStreak(0), 200);
-      }, 2000);
-      timerRef[0] = timer;
     } catch {
-      // Clipboard API unavailable
+      return;
     }
-  };
 
-  const message = streakMessages[streak] || streakMessages[streakMessages.length - 1];
+    // Clear previous hide timer
+    if (timerRef.current) clearTimeout(timerRef.current);
+
+    // Bump streak (first click = 0, second = 1, etc.)
+    setStreak((prev) => {
+      const next = visible ? Math.min(prev + 1, STREAK_MESSAGES.length - 1) : 0;
+      return next;
+    });
+    setVisible(true);
+
+    // Hide after 2s and reset streak after fade-out
+    timerRef.current = setTimeout(() => {
+      setVisible(false);
+      setTimeout(() => setStreak(0), 300);
+    }, 2000);
+  }, [value, visible]);
+
+  const suffix = STREAK_MESSAGES[streak];
+  const message = suffix ? `${label} ${suffix}` : label;
 
   return (
-    <div className="relative flex flex-col items-center gap-1.5">
+    <div className="flex flex-col items-center gap-1 min-h-[2.5rem]">
       <div className="flex items-center gap-1.5">
         <span className="text-xs text-gray-500 dark:text-gray-400">{value}</span>
         <button
@@ -82,20 +88,22 @@ function CopyButton({ value, label }: { value: string; label: string }) {
           <MdContentCopy className="w-3.5 h-3.5 text-gray-400 dark:text-gray-500" />
         </button>
       </div>
-      <AnimatePresence mode="wait">
-        {visible && (
-          <motion.span
-            key={streak}
-            initial={{ opacity: 0, scale: 0.8, y: 4 }}
-            animate={{ opacity: 1, scale: 1 + streak * 0.05, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.2 }}
-            className="text-xs text-primary-500 dark:text-primary-400 whitespace-nowrap font-medium"
-          >
-            {message}
-          </motion.span>
-        )}
-      </AnimatePresence>
+      <div className="h-5 flex items-center justify-center">
+        <AnimatePresence mode="wait">
+          {visible && (
+            <motion.span
+              key={streak}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 + streak * 0.04 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.15 }}
+              className="text-xs text-primary-500 dark:text-primary-400 whitespace-nowrap font-medium text-center"
+            >
+              {message}
+            </motion.span>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 }
