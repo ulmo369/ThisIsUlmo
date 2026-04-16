@@ -31,54 +31,21 @@ describe('Property 4: Project card links match project slugs', () => {
   });
 });
 
-describe('Property 5: Project detail page completeness', () => {
+describe('Property 5: Project structural data completeness', () => {
   it.each(projects.map((p) => [p.slug, p]))(
-    'project "%s" has complete STAR sections, techStack, and engineeringHighlights',
+    'project "%s" has complete structural fields (slug, techStack)',
     (_slug, project) => {
       const p = project as (typeof projects)[number];
 
-      // STAR sections are non-empty strings
-      expect(typeof p.star.situation).toBe('string');
-      expect(p.star.situation.length).toBeGreaterThan(0);
-      expect(typeof p.star.task).toBe('string');
-      expect(p.star.task.length).toBeGreaterThan(0);
-      expect(typeof p.star.action).toBe('string');
-      expect(p.star.action.length).toBeGreaterThan(0);
-      expect(typeof p.star.result).toBe('string');
-      expect(p.star.result.length).toBeGreaterThan(0);
+      // slug is a non-empty string
+      expect(typeof p.slug).toBe('string');
+      expect(p.slug.length).toBeGreaterThan(0);
 
       // Every techStack item is a non-empty string
       expect(p.techStack.length).toBeGreaterThan(0);
       for (const tech of p.techStack) {
         expect(typeof tech).toBe('string');
         expect(tech.length).toBeGreaterThan(0);
-      }
-
-      // Engineering highlights arrays are non-empty
-      const { decisions, tradeoffs, constraints, scalability } = p.engineeringHighlights;
-
-      expect(decisions.length).toBeGreaterThan(0);
-      for (const d of decisions) {
-        expect(typeof d).toBe('string');
-        expect(d.length).toBeGreaterThan(0);
-      }
-
-      expect(tradeoffs.length).toBeGreaterThan(0);
-      for (const t of tradeoffs) {
-        expect(typeof t).toBe('string');
-        expect(t.length).toBeGreaterThan(0);
-      }
-
-      expect(constraints.length).toBeGreaterThan(0);
-      for (const c of constraints) {
-        expect(typeof c).toBe('string');
-        expect(c.length).toBeGreaterThan(0);
-      }
-
-      expect(scalability.length).toBeGreaterThan(0);
-      for (const s of scalability) {
-        expect(typeof s).toBe('string');
-        expect(s.length).toBeGreaterThan(0);
       }
     },
   );

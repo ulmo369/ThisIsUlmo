@@ -63,9 +63,9 @@ export default function PersonalSection() {
                 <Card key={`${entry.institution}-${entry.degree}`} className="h-full">
                   <Heading level={4} className="mb-2">{entry.degree}</Heading>
                   <p className="text-sm font-medium text-gray-700 dark:text-gray-300">{entry.institution}</p>
-                  <span className="text-xs text-gray-500 dark:text-gray-400">{entry.period}</span>
-                  {entry.description && (
-                    <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{entry.description}</p>
+                  <span className="text-xs text-gray-500 dark:text-gray-400">{t(`education.${entry.id}.period`)}</span>
+                  {t(`education.${entry.id}.description`) && (
+                    <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{t(`education.${entry.id}.description`)}</p>
                   )}
                 </Card>
               ))}
@@ -79,12 +79,12 @@ export default function PersonalSection() {
             </Heading>
             <div className="grid gap-6 sm:grid-cols-2">
               {awards.map((award) => (
-                <Card key={award.title} className="h-full">
+                <Card key={award.id} className="h-full">
                   <div className="flex items-start justify-between gap-2 mb-2">
-                    <Heading level={4}>{award.title}</Heading>
+                    <Heading level={4}>{t(`awards.${award.id}.title`)}</Heading>
                     {award.year && <Badge label={award.year} variant="default" />}
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{award.description}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{t(`awards.${award.id}.description`)}</p>
                 </Card>
               ))}
             </div>

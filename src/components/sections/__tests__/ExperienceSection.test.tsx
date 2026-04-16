@@ -21,20 +21,18 @@ describe('ExperienceSection', () => {
     expect(screen.getByText('experience.subtitle')).toBeInTheDocument();
   });
 
-  it('renders all experience entries', () => {
+  it('renders all experience entries with translated roles and company names', () => {
     render(<ExperienceSection />);
     for (const entry of experience) {
-      expect(screen.getByText(entry.role)).toBeInTheDocument();
+      expect(screen.getByText(`experience.${entry.id}.role`)).toBeInTheDocument();
       expect(screen.getByText(entry.company)).toBeInTheDocument();
     }
   });
 
-  it('renders metrics for the primary entry', () => {
+  it('renders translated descriptions for each entry', () => {
     render(<ExperienceSection />);
-    const primary = experience.find((e) => e.isPrimary);
-    expect(primary).toBeDefined();
-    for (const metric of primary!.metrics) {
-      expect(screen.getByText(metric)).toBeInTheDocument();
+    for (const entry of experience) {
+      expect(screen.getByText(`experience.${entry.id}.description`)).toBeInTheDocument();
     }
   });
 

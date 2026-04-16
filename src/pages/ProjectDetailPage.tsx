@@ -46,8 +46,8 @@ export default function ProjectDetailPage() {
   return (
     <Section>
       <SEOHead
-        title={`${project.title} | Diego Emilio Barrera Hernandez`}
-        description={project.description}
+        title={`${t(`${project.slug}.title`)} | Diego Emilio Barrera Hernandez`}
+        description={t(`${project.slug}.description`)}
         ogImage={fallbackSeo.ogImage}
         ogUrl={`https://placeholder.dev/projects/${project.slug}`}
       />
@@ -70,9 +70,9 @@ export default function ProjectDetailPage() {
 
           {/* Title and description */}
           <motion.div variants={fadeInUp}>
-            <Heading level={1}>{project.title}</Heading>
+            <Heading level={1}>{t(`${project.slug}.title`)}</Heading>
             <p className="mt-4 text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              {project.description}
+              {t(`${project.slug}.description`)}
             </p>
             {project.repoUrl && (
               <div className="mt-4">
@@ -104,7 +104,7 @@ export default function ProjectDetailPage() {
                     {t(`star.${key}`)}
                   </Heading>
                   <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-                    {project.star[key]}
+                    {t(`${project.slug}.star.${key}`)}
                   </p>
                 </Card>
               </motion.div>
@@ -112,13 +112,17 @@ export default function ProjectDetailPage() {
           </div>
 
           {/* Metrics */}
-          {project.metrics && project.metrics.length > 0 && (
-            <motion.div variants={fadeInUp} className="flex flex-wrap gap-3">
-              {project.metrics.map((metric) => (
-                <Badge key={metric} label={metric} variant="core" />
-              ))}
-            </motion.div>
-          )}
+          {(() => {
+            const metrics = t(`${project.slug}.metrics`, { returnObjects: true });
+            const metricsArr = Array.isArray(metrics) ? metrics : [];
+            return metricsArr.length > 0 ? (
+              <motion.div variants={fadeInUp} className="flex flex-wrap gap-3">
+                {metricsArr.map((metric) => (
+                  <Badge key={metric} label={metric} variant="core" />
+                ))}
+              </motion.div>
+            ) : null;
+          })()}
 
           {/* Engineering Highlights */}
           <motion.div variants={fadeIn}>
@@ -126,24 +130,28 @@ export default function ProjectDetailPage() {
               {t('engineering.title')}
             </Heading>
             <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
-              {highlightKeys.map((key) => (
-                <Card key={key} className="h-full">
-                  <Heading level={4} mono className="mb-3">
-                    {t(`engineering.${key}`)}
-                  </Heading>
-                  <ul className="space-y-2">
-                    {project.engineeringHighlights[key].map((item, i) => (
-                      <li
-                        key={i}
-                        className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed flex items-start gap-2"
-                      >
-                        <span className="text-primary-500 mt-1 shrink-0">•</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </Card>
-              ))}
+              {highlightKeys.map((key) => {
+                const items = t(`${project.slug}.engineeringHighlights.${key}`, { returnObjects: true });
+                const itemsArr = Array.isArray(items) ? items : [];
+                return (
+                  <Card key={key} className="h-full">
+                    <Heading level={4} mono className="mb-3">
+                      {t(`engineering.${key}`)}
+                    </Heading>
+                    <ul className="space-y-2">
+                      {itemsArr.map((item: string, i: number) => (
+                        <li
+                          key={i}
+                          className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed flex items-start gap-2"
+                        >
+                          <span className="text-primary-500 mt-1 shrink-0">•</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+                );
+              })}
             </div>
           </motion.div>
 
@@ -165,7 +173,7 @@ export default function ProjectDetailPage() {
           <motion.div variants={fadeInUp}>
             <img
               src=""
-              alt={project.title}
+              alt={t(`${project.slug}.title`)}
               loading="lazy"
               width={800}
               height={400}

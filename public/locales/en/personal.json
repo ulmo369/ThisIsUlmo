@@ -22,9 +22,25 @@
     "description": "Competitive, passionate, and always looking for the next adventure. Whether it's a triathlon, a Smash tournament, or a metal concert, I go all in"
   },
   "education": {
-    "title": "Education"
+    "title": "Education",
+    "itesm-cs": {
+      "period": "Graduated Jun 2024",
+      "description": "GPA: 94/100 (3.7/4.0). Focus on software engineering, distributed systems, and applied AI"
+    },
+    "itesm-ai": {
+      "period": "Concentration Semester",
+      "description": "GPA: 100/100 (4.0/4.0). Specialized coursework in machine learning, neural networks, and data engineering"
+    }
   },
   "awards": {
-    "title": "Awards"
+    "title": "Awards",
+    "vex-national": {
+      "title": "VEX National Robotics Championship, 1st Place",
+      "description": "Led the programming stage of the robot for team VORTEX, winning the national championship"
+    },
+    "vex-world": {
+      "title": "VEX Robotics World Championship, 33rd of 100",
+      "description": "Led the programming stage at the world championship, placing 33rd out of 100 teams globally"
+    }
   }
 }

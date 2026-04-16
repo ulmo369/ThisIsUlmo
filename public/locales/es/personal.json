@@ -22,9 +22,25 @@
     "description": "Competitivo, apasionado y siempre buscando la siguiente aventura. Ya sea un triatlón, un torneo de Smash o un concierto de metal, voy con todo"
   },
   "education": {
-    "title": "Educación"
+    "title": "Educación",
+    "itesm-cs": {
+      "period": "Graduado Jun 2024",
+      "description": "Promedio: 94/100 (3.7/4.0). Enfoque en ingeniería de software, sistemas distribuidos e IA aplicada"
+    },
+    "itesm-ai": {
+      "period": "Semestre de Concentración",
+      "description": "Promedio: 100/100 (4.0/4.0). Cursos especializados en aprendizaje automático, redes neuronales e ingeniería de datos"
+    }
   },
   "awards": {
-    "title": "Premios"
+    "title": "Premios",
+    "vex-national": {
+      "title": "Campeonato Nacional de Robótica VEX, 1er Lugar",
+      "description": "Lideré la etapa de programación del robot para el equipo VORTEX, ganando el campeonato nacional"
+    },
+    "vex-world": {
+      "title": "Campeonato Mundial de Robótica VEX, 33° de 100",
+      "description": "Lideré la etapa de programación en el campeonato mundial, ubicándome 33° de 100 equipos a nivel global"
+    }
   }
 }

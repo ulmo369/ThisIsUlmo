@@ -6,5 +6,20 @@
     "impact": "$2.8B Protegidos",
     "saved": "$7M+ Protegidos",
     "tickets": "80%+ Tickets Resueltos"
+  },
+  "amazon-sde": {
+    "role": "Ingeniero de Desarrollo de Software I",
+    "description": "Construyendo y manteniendo sistemas distribuidos escalables para cumplimiento y operaciones de vendedores. Identifiqué brechas críticas de diseño en la lógica heredada de integración KYC, diseñé estrategias de despliegue para campañas de suscripción en América Latina y resolví 80%+ de tickets de guardia de forma autónoma",
+    "metrics": ["$2.8B en pérdidas potenciales prevenidas", "$7M+ en pérdidas potenciales prevenidas", "80%+ tickets de guardia resueltos"]
+  },
+  "psl-intern": {
+    "role": "Pasante de Desarrollo de Aplicaciones",
+    "description": "Desarrollo full-stack de sistemas de gestión farmacéutica usando PHP, TypeScript, JavaScript y React. Entregué resultados mediante metodología Scrum, aprovechando servicios AWS incluyendo CodeCommit, y trabajando con bases de datos SQL/NoSQL",
+    "metrics": ["Sistemas farmacéuticos full-stack", "Entrega Scrum", "AWS + SQL/NoSQL"]
+  },
+  "ge-intern": {
+    "role": "Pasante de Sistemas de Aviación",
+    "description": "Programé y probé códigos de control automático para sistemas de aeronaves (E747, E737). Realicé pruebas de caja negra y caja blanca, apliqué metodologías Scrum y Lean, y conduje análisis de requisitos de software usando IBM DOORS",
+    "metrics": ["Sistemas de aeronaves (E747, E737)", "Pruebas de caja negra y caja blanca", "Análisis IBM DOORS"]
   }
 }
