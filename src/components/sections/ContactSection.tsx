@@ -33,38 +33,66 @@ function getContactMethods(): ContactMethod[] {
 }
 
 function CopyButton({ value, label }: { value: string; label: string }) {
-  const [copied, setCopied] = useState(false);
+  const [streak, setStreak] = useState(0);
+  const [visible, setVisible] = useState(false);
+  const timerRef = useState<ReturnType<typeof setTimeout> | null>(null);
+
+  const streakMessages = [
+    label,
+    `${label} double!!`,
+    `${label} triple!!`,
+    `${label} dominating!!`,
+    `${label} exterminio!!`,
+    `${label} masacre!!!`,
+    `${label} imparable!!!!`,
+    `${label} DIOS!!!!!`,
+    `${label} POR ENCIMA DE DIOS!!!!!!`,
+  ];
 
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(value);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+
+      if (timerRef[0]) clearTimeout(timerRef[0]);
+
+      setStreak((prev) => Math.min(prev + 1, streakMessages.length - 1));
+      setVisible(true);
+
+      const timer = setTimeout(() => {
+        setVisible(false);
+        setTimeout(() => setStreak(0), 200);
+      }, 2000);
+      timerRef[0] = timer;
     } catch {
-      // Fallback: silently fail if clipboard API unavailable
+      // Clipboard API unavailable
     }
   };
 
+  const message = streakMessages[streak] || streakMessages[streakMessages.length - 1];
+
   return (
-    <div className="relative flex items-center gap-1.5">
-      <span className="text-xs text-gray-500 dark:text-gray-400">{value}</span>
-      <button
-        onClick={handleCopy}
-        aria-label={label}
-        className="p-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-      >
-        <MdContentCopy className="w-3.5 h-3.5 text-gray-400 dark:text-gray-500" />
-      </button>
-      <AnimatePresence>
-        {copied && (
+    <div className="relative flex flex-col items-center gap-1.5">
+      <div className="flex items-center gap-1.5">
+        <span className="text-xs text-gray-500 dark:text-gray-400">{value}</span>
+        <button
+          onClick={handleCopy}
+          aria-label={label}
+          className="p-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+        >
+          <MdContentCopy className="w-3.5 h-3.5 text-gray-400 dark:text-gray-500" />
+        </button>
+      </div>
+      <AnimatePresence mode="wait">
+        {visible && (
           <motion.span
-            initial={{ opacity: 0, y: 4 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
+            key={streak}
+            initial={{ opacity: 0, scale: 0.8, y: 4 }}
+            animate={{ opacity: 1, scale: 1 + streak * 0.05, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.2 }}
-            className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-xs text-primary-500 dark:text-primary-400 whitespace-nowrap"
+            className="text-xs text-primary-500 dark:text-primary-400 whitespace-nowrap font-medium"
           >
-            {label}
+            {message}
           </motion.span>
         )}
       </AnimatePresence>
