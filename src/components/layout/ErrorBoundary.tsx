@@ -39,13 +39,13 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
       return (
         <div
           role="alert"
-          className="flex min-h-screen flex-col items-center justify-center gap-6 bg-background-light px-4 text-center dark:bg-background-dark"
+          className="flex min-h-screen flex-col items-center justify-center gap-6 bg-theme-light-base px-4 text-center dark:bg-theme-dark-base"
         >
           <div className="text-6xl" aria-hidden="true">⚠️</div>
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+          <h1 className="text-2xl font-bold text-theme-light-text-primary dark:text-theme-dark-text-primary">
             Something went wrong
           </h1>
-          <p className="max-w-md text-gray-600 dark:text-gray-400">
+          <p className="max-w-md text-theme-light-text-secondary dark:text-theme-dark-text-secondary">
             An unexpected error occurred. Please try again or refresh the page.
           </p>
           <button
