@@ -2,8 +2,9 @@ const dark = {
   base: '#0f0f1a', surface: '#1a1a2e', elevated: '#25254a', overlay: '#232b3d',
   border: '#2d2d5e', borderAccent: '#3d3d7a',
   textPrimary: '#e2e8f0', textBody: '#cbd5e1', textSecondary: '#94a3b8', textMuted: '#64748b',
-  accentGreen: '#4ade80', accentGreenBg: '#166534',
-  accentRed: '#f87171', accentRedBg: '#4a1525',
+  accentGreen: '#6b7f3a', accentGreenBg: 'rgba(74,93,35,0.2)',
+  accentRed: '#8b3a44', accentRedBg: 'rgba(114,47,55,0.2)',
+  coreBg: 'rgba(30,58,138,0.4)', coreText: '#93c5fd',
   primary: '#60a5fa',
 };
 
@@ -26,7 +27,7 @@ function Swatch({ name, hex }: { name: string; hex: string }) {
   );
 }
 
-function SampleCard({ bg, border, textPrimary, textSecondary, accentGreen, accentGreenBg, accentRed, accentRedBg, primary }: Record<string, string>) {
+function SampleCard({ bg, border, textPrimary, textSecondary, accentGreen, accentGreenBg, accentRed, accentRedBg, primary, coreBg, coreText }: Record<string, string>) {
   return (
     <div style={{ background: bg, border: `1px solid ${border}`, borderRadius: 12, padding: 20, marginBottom: 12 }}>
       <h3 style={{ color: textPrimary, fontSize: 18, fontWeight: 700, marginBottom: 8 }}>Sample Card</h3>
@@ -34,7 +35,7 @@ function SampleCard({ bg, border, textPrimary, textSecondary, accentGreen, accen
       <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 12 }}>
         <span style={{ background: accentGreenBg, color: accentGreen, padding: '2px 10px', borderRadius: 999, fontSize: 12, fontWeight: 500 }}>Experienced</span>
         <span style={{ background: accentRedBg, color: accentRed, padding: '2px 10px', borderRadius: 999, fontSize: 12, fontWeight: 500 }}>Familiar</span>
-        <span style={{ background: 'rgba(96,165,250,0.15)', color: primary, padding: '2px 10px', borderRadius: 999, fontSize: 12, fontWeight: 500 }}>Core</span>
+        <span style={{ background: coreBg || 'rgba(96,165,250,0.15)', color: coreText || primary, padding: '2px 10px', borderRadius: 999, fontSize: 12, fontWeight: 500 }}>Core</span>
       </div>
       <div style={{ display: 'flex', gap: 8 }}>
         <button style={{ background: primary, color: '#fff', padding: '8px 16px', borderRadius: 8, fontSize: 14, fontWeight: 500, border: 'none', cursor: 'pointer' }}>Primary</button>
@@ -71,6 +72,8 @@ function Panel({ title, tokens, isLight }: { title: string; tokens: typeof dark 
         accentRed={tokens.accentRed}
         accentRedBg={tokens.accentRedBg}
         primary={tokens.primary}
+        coreBg={'coreBg' in tokens ? (tokens as typeof dark).coreBg : ''}
+        coreText={'coreText' in tokens ? (tokens as typeof dark).coreText : ''}
       />
 
       <SampleCard
@@ -83,6 +86,8 @@ function Panel({ title, tokens, isLight }: { title: string; tokens: typeof dark 
         accentRed={tokens.accentRed}
         accentRedBg={tokens.accentRedBg}
         primary={tokens.primary}
+        coreBg={'coreBg' in tokens ? (tokens as typeof dark).coreBg : ''}
+        coreText={'coreText' in tokens ? (tokens as typeof dark).coreText : ''}
       />
 
       <h3 style={{ color: textColor, fontSize: 14, fontWeight: 600, marginTop: 16, marginBottom: 8 }}>Color Swatches</h3>
