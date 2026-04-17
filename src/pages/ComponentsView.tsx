@@ -19,7 +19,7 @@ import PalettePreview from '@/pages/PalettePreview'
 
 export default function ComponentsView() {
   return (
-    <div className="min-h-screen bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100">
+    <div className="min-h-screen bg-theme-light-base dark:bg-theme-dark-base text-theme-light-text-primary dark:text-theme-dark-text-primary">
       {/* Navbar at top */}
       <Navbar />
       <ScrollToTopButton />
@@ -30,7 +30,7 @@ export default function ComponentsView() {
         <Section>
           <Container>
             <Heading level={1}>Component Preview</Heading>
-            <p className="mt-2 text-gray-500 dark:text-gray-400 text-sm">
+            <p className="mt-2 text-theme-light-text-muted dark:text-theme-dark-text-muted text-sm">
               Vista temporal para verificar componentes
             </p>
           </Container>
@@ -40,20 +40,20 @@ export default function ComponentsView() {
         <Section>
           <Container>
             <Heading level={2}>Buttons</Heading>
-            <Heading level={4} className="mt-4 text-gray-500 dark:text-gray-400">Variants</Heading>
+            <Heading level={4} className="mt-4 text-theme-light-text-muted dark:text-theme-dark-text-muted">Variants</Heading>
             <div className="mt-2 flex flex-wrap gap-3">
               <Button variant="primary">Primary</Button>
               <Button variant="secondary">Secondary</Button>
               <Button variant="ghost">Ghost</Button>
               <Button variant="outline">Outline</Button>
             </div>
-            <Heading level={4} className="mt-4 text-gray-500 dark:text-gray-400">Sizes</Heading>
+            <Heading level={4} className="mt-4 text-theme-light-text-muted dark:text-theme-dark-text-muted">Sizes</Heading>
             <div className="mt-2 flex flex-wrap items-center gap-3">
               <Button size="sm">Small</Button>
               <Button size="md">Medium</Button>
               <Button size="lg">Large</Button>
             </div>
-            <Heading level={4} className="mt-4 text-gray-500 dark:text-gray-400">States</Heading>
+            <Heading level={4} className="mt-4 text-theme-light-text-muted dark:text-theme-dark-text-muted">States</Heading>
             <div className="mt-2 flex flex-wrap gap-3">
               <Button href="https://example.com" external>External Link</Button>
               <Button disabled>Disabled</Button>
@@ -85,7 +85,7 @@ export default function ComponentsView() {
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <Card>
                 <Heading level={3}>Static Card</Heading>
-                <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">Basic card without hover effect.</p>
+                <p className="mt-2 text-theme-light-text-secondary dark:text-theme-dark-text-secondary text-sm">Basic card without hover effect.</p>
                 <div className="mt-3 flex flex-wrap gap-1">
                   <Badge label="Python" variant="core" />
                   <Badge label="AWS" variant="core" />
@@ -93,7 +93,7 @@ export default function ComponentsView() {
               </Card>
               <Card hoverable>
                 <Heading level={3}>Hoverable Card</Heading>
-                <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">Hover me for scale + shadow effect.</p>
+                <p className="mt-2 text-theme-light-text-secondary dark:text-theme-dark-text-secondary text-sm">Hover me for scale + shadow effect.</p>
                 <div className="mt-3 flex flex-wrap gap-1">
                   <Badge label="React" variant="experienced" />
                   <Badge label="TypeScript" variant="core" />
@@ -101,7 +101,7 @@ export default function ComponentsView() {
               </Card>
               <Card hoverable onClick={() => {}}>
                 <Heading level={3}>Clickable Card</Heading>
-                <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">Has button role + tabIndex for a11y.</p>
+                <p className="mt-2 text-theme-light-text-secondary dark:text-theme-dark-text-secondary text-sm">Has button role + tabIndex for a11y.</p>
                 <div className="mt-3 flex flex-wrap gap-1">
                   <Badge label="Rust" variant="familiar" />
                   <Badge label="Docker" variant="default" />
@@ -127,10 +127,10 @@ export default function ComponentsView() {
         </Section>
 
         {/* Section + Container demo */}
-        <Section id="section-demo" className="bg-gray-50 dark:bg-gray-900/50">
+        <Section id="section-demo" className="bg-theme-light-surface dark:bg-theme-dark-surface">
           <Container>
             <Heading level={2}>Section + Container</Heading>
-            <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+            <p className="mt-2 text-theme-light-text-secondary dark:text-theme-dark-text-secondary text-sm">
               This section has a custom background to show the Section component with an id anchor and className override.
               The Container centers content with max-width and responsive padding.
             </p>
@@ -141,8 +141,8 @@ export default function ComponentsView() {
         <Section>
           <Container>
             <Heading level={2}>Loading Fallback</Heading>
-            <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">Spinner used as Suspense fallback for lazy-loaded pages.</p>
-            <div className="mt-4 rounded-xl border border-gray-200 dark:border-gray-800 p-8">
+            <p className="mt-2 text-theme-light-text-secondary dark:text-theme-dark-text-secondary text-sm">Spinner used as Suspense fallback for lazy-loaded pages.</p>
+            <div className="mt-4 rounded-xl border border-theme-light-border dark:border-theme-dark-border p-8">
               <LoadingFallback />
             </div>
           </Container>
@@ -152,12 +152,12 @@ export default function ComponentsView() {
         <Section>
           <Container>
             <Heading level={2}>Error Boundary Fallback</Heading>
-            <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">Friendly error state shown when a runtime error is caught.</p>
-            <div className="mt-4 rounded-xl border border-gray-200 dark:border-gray-800 p-8">
+            <p className="mt-2 text-theme-light-text-secondary dark:text-theme-dark-text-secondary text-sm">Friendly error state shown when a runtime error is caught.</p>
+            <div className="mt-4 rounded-xl border border-theme-light-border dark:border-theme-dark-border p-8">
               <div className="flex flex-col items-center justify-center gap-6 text-center">
                 <div className="text-6xl" aria-hidden="true">⚠️</div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Something went wrong</h3>
-                <p className="max-w-md text-gray-600 dark:text-gray-400">An unexpected error occurred. Please try again or refresh the page.</p>
+                <h3 className="text-2xl font-bold text-theme-light-text-primary dark:text-theme-dark-text-primary">Something went wrong</h3>
+                <p className="max-w-md text-theme-light-text-secondary dark:text-theme-dark-text-secondary">An unexpected error occurred. Please try again or refresh the page.</p>
                 <button className="rounded-lg bg-primary-600 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-400">
                   Try Again
                 </button>
@@ -167,10 +167,10 @@ export default function ComponentsView() {
         </Section>
 
         {/* === Landing Page Sections Preview === */}
-        <Section className="bg-gray-50 dark:bg-gray-900/50">
+        <Section className="bg-theme-light-surface dark:bg-theme-dark-surface">
           <Container>
             <Heading level={2}>Landing Page Sections</Heading>
-            <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">Preview of all landing page sections below.</p>
+            <p className="mt-2 text-theme-light-text-secondary dark:text-theme-dark-text-secondary text-sm">Preview of all landing page sections below.</p>
           </Container>
         </Section>
 
@@ -185,7 +185,7 @@ export default function ComponentsView() {
         {/* Scroll spacer */}
         <Section>
           <Container>
-            <div className="h-[600px] flex items-center justify-center text-gray-500 dark:text-gray-400">
+            <div className="h-[600px] flex items-center justify-center text-theme-light-text-muted dark:text-theme-dark-text-muted">
               <p className="text-center">↓ Scroll down to see the scroll-to-top button ↓</p>
             </div>
           </Container>
