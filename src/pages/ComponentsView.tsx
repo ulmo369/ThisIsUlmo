@@ -15,6 +15,7 @@ import ExperienceSection from '@/components/sections/ExperienceSection'
 import ProjectsSection from '@/components/sections/ProjectsSection'
 import ContactSection from '@/components/sections/ContactSection'
 import PersonalSection from '@/components/sections/PersonalSection'
+import PalettePreview from '@/pages/PalettePreview'
 
 export default function ComponentsView() {
   return (
@@ -24,6 +25,8 @@ export default function ComponentsView() {
       <ScrollToTopButton />
 
       <div className="pt-20">
+        <PalettePreview />
+
         <Section>
           <Container>
             <Heading level={1}>Component Preview</Heading>
