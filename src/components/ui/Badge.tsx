@@ -11,7 +11,7 @@ const variantClasses: Record<string, string> = {
   familiar:
     'bg-accent-red-bg-light text-accent-red-light dark:bg-accent-red-bg-dark dark:text-accent-red-dark border-accent-red-light/30 dark:border-accent-red-dark/40',
   default:
-    'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 border-gray-200 dark:border-gray-700',
+    'bg-theme-light-surface text-theme-light-text-secondary dark:bg-theme-dark-surface dark:text-theme-dark-text-secondary border-theme-light-border dark:border-theme-dark-border',
 };
 
 export default function Badge({

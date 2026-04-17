@@ -32,7 +32,7 @@ describe('Badge', () => {
 
   it('applies default variant classes when no variant specified', () => {
     render(<Badge label="Default" />);
-    expect(screen.getByText('Default')).toHaveClass('bg-gray-100', 'text-gray-700');
+    expect(screen.getByText('Default')).toHaveClass('bg-theme-light-surface', 'text-theme-light-text-secondary');
   });
 
   it('uses different classes for each variant', () => {
