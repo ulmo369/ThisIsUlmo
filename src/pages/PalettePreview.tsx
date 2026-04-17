@@ -77,7 +77,7 @@ function Panel({ title, tokens, isLight }: { title: string; tokens: typeof dark 
       />
 
       <SampleCard
-        bg={'elevated' in tokens ? (tokens as typeof dark).elevated : tokens.surface}
+        bg={'elevated' in tokens ? (tokens as typeof dark).elevated : (tokens as typeof light).surface}
         border={tokens.borderAccent}
         textPrimary={textColor}
         textSecondary={secondaryColor}
