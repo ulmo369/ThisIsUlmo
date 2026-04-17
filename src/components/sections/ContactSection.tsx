@@ -32,22 +32,21 @@ function getContactMethods(): ContactMethod[] {
   return methods;
 }
 
-const STREAK_MESSAGES = [
-  '',
-  'double!!',
-  'triple!!',
-  'dominating!!',
-  'exterminio!!',
-  'masacre!!!',
-  'imparable!!!!',
-  'DIOS!!!!!',
-  'POR ENCIMA DE DIOS!!!!!!',
+const STREAK_SUFFIXES_EN = [
+  '', 'double!!', 'triple!!', 'dominating!!', 'exterminio!!',
+  'masacre!!!', 'imparable!!!!', 'DIOS!!!!!', 'POR ENCIMA DE DIOS!!!!!!',
 ];
 
-function CopyButton({ value, label }: { value: string; label: string }) {
+const STREAK_SUFFIXES_ES = [
+  '', 'doble!!', 'triple!!', 'dominando!!', 'exterminio!!',
+  'masacre!!!', 'imparable!!!!', 'DIOS!!!!!', 'POR ENCIMA DE DIOS!!!!!!',
+];
+
+function CopyButton({ value, label, lang }: { value: string; label: string; lang: string }) {
   const [streak, setStreak] = useState(0);
   const [visible, setVisible] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const suffixes = lang.startsWith('es') ? STREAK_SUFFIXES_ES : STREAK_SUFFIXES_EN;
 
   const handleCopy = useCallback(async () => {
     try {
@@ -61,7 +60,7 @@ function CopyButton({ value, label }: { value: string; label: string }) {
 
     // Bump streak (first click = 0, second = 1, etc.)
     setStreak((prev) => {
-      const next = visible ? Math.min(prev + 1, STREAK_MESSAGES.length - 1) : 0;
+      const next = visible ? Math.min(prev + 1, suffixes.length - 1) : 0;
       return next;
     });
     setVisible(true);
@@ -73,11 +72,11 @@ function CopyButton({ value, label }: { value: string; label: string }) {
     }, 2000);
   }, [value, visible]);
 
-  const suffix = STREAK_MESSAGES[streak];
+  const suffix = suffixes[streak];
   const message = suffix ? `${label} ${suffix}` : label;
 
   return (
-    <div className="flex flex-col items-center gap-1 min-h-[2.5rem]">
+    <div className="relative flex flex-col items-center gap-1">
       <div className="flex items-center gap-1.5">
         <span className="text-xs text-theme-light-text-muted dark:text-theme-dark-text-muted">{value}</span>
         <button
@@ -88,38 +87,36 @@ function CopyButton({ value, label }: { value: string; label: string }) {
           <MdContentCopy className="w-3.5 h-3.5 text-theme-light-text-muted dark:text-theme-dark-text-muted" />
         </button>
       </div>
-      <div className="h-5 flex items-center justify-center">
-        <AnimatePresence mode="wait">
-          {visible && (
-            <motion.span
-              key={streak}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={
-                streak >= 8
-                  ? { opacity: 1, scale: 1.35, x: [0, -4, 4, -4, 4, -2, 2, 0], y: [0, -2, 2, -2, 2, 0] }
-                  : streak >= 7
-                    ? { opacity: 1, scale: 1.3, x: [0, -2, 2, -2, 2, 0] }
-                    : { opacity: 1, scale: 1 + streak * 0.04 }
-              }
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={
-                streak >= 7
-                  ? { duration: 0.4, x: { repeat: Infinity, duration: 0.3 }, y: { repeat: Infinity, duration: 0.4 } }
-                  : { duration: 0.15 }
-              }
-              className="text-xs text-primary-500 dark:text-primary-400 whitespace-nowrap font-medium text-center"
+      <AnimatePresence mode="wait">
+        {visible && (
+          <motion.span
+            key={streak}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={
+              streak >= 8
+                ? { opacity: 1, scale: 1.35, x: [0, -4, 4, -4, 4, -2, 2, 0], y: [0, -2, 2, -2, 2, 0] }
+                : streak >= 7
+                  ? { opacity: 1, scale: 1.3, x: [0, -2, 2, -2, 2, 0] }
+                  : { opacity: 1, scale: 1 + streak * 0.04 }
+            }
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={
+              streak >= 7
+                ? { duration: 0.4, x: { repeat: Infinity, duration: 0.3 }, y: { repeat: Infinity, duration: 0.4 } }
+                : { duration: 0.15 }
+            }
+            className="absolute -bottom-5 text-xs text-primary-500 dark:text-primary-400 whitespace-nowrap font-medium text-center"
             >
               {message}
             </motion.span>
           )}
         </AnimatePresence>
-      </div>
     </div>
   );
 }
 
 export default function ContactSection() {
-  const { t } = useTranslation('contact');
+  const { t, i18n } = useTranslation('contact');
   const methods = getContactMethods();
 
   return (
@@ -141,7 +138,7 @@ export default function ContactSection() {
 
           <motion.div
             variants={fadeInUp}
-            className="flex flex-wrap items-start justify-center gap-8"
+            className="flex flex-wrap items-start justify-center gap-12 sm:gap-16"
           >
             {methods.map((method) => {
               const IconComponent = method.icon;
@@ -158,7 +155,7 @@ export default function ContactSection() {
                     <span className="text-xs text-theme-light-text-muted dark:text-theme-dark-text-muted">{t(`tooltips.${method.key}`)}</span>
                   </a>
                   {method.copyValue && (
-                    <CopyButton value={method.copyValue} label={t('copied')} />
+                    <CopyButton value={method.copyValue} label={t('copied')} lang={i18n.language} />
                   )}
                 </div>
               );
