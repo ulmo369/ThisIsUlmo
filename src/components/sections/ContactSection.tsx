@@ -164,7 +164,7 @@ export default function ContactSection() {
 
           <motion.p
             variants={fadeInUp}
-            className="text-center text-theme-light-text-muted dark:text-theme-dark-text-muted text-sm sm:text-base"
+            className="text-center text-theme-light-text-muted dark:text-theme-dark-text-muted text-sm sm:text-base mt-4"
           >
             {t('cta')}
           </motion.p>
