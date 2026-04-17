@@ -9,8 +9,8 @@ const dark = {
 };
 
 const light = {
-  base: '#f5f5f4', surface: '#e7e5e4', elevated: '#d6d3d1',
-  border: '#d6d3d1', borderAccent: '#a8a29e',
+  base: '#eeeceb', surface: '#e0dedc', elevated: '#d1cfcd',
+  border: '#d1cfcd', borderAccent: '#a8a29e',
   textPrimary: '#1c1917', textSecondary: '#57534e', textMuted: '#a8a29e',
   accentGreen: '#16a34a', accentGreenBg: '#dcfce7',
   accentRed: '#dc2626', accentRedBg: '#fee2e2',
