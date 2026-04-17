@@ -100,7 +100,7 @@ export default function ProjectDetailPage() {
             {starKeys.map((key) => (
               <motion.div key={key} variants={fadeInUp}>
                 <Card className="h-full">
-                  <Heading level={3} mono className="mb-3 text-primary-500 dark:text-primary-400">
+                  <Heading level={3} mono className="mb-3 !text-primary-600 dark:!text-primary-400">
                     {t(`star.${key}`)}
                   </Heading>
                   <p className="text-theme-light-text-secondary dark:text-theme-dark-text-secondary text-sm leading-relaxed">
