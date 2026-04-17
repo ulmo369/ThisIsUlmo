@@ -29,7 +29,7 @@ export default function PersonalSection() {
           {/* Header */}
           <motion.div variants={fadeInUp} className="text-center">
             <Heading level={2}>{t('title')}</Heading>
-            <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-theme-light-text-secondary dark:text-theme-dark-text-secondary leading-relaxed">
               {t('subtitle')}
             </p>
           </motion.div>
@@ -40,7 +40,7 @@ export default function PersonalSection() {
               <motion.div key={category} variants={fadeInUp}>
                 <Card className="h-full flex flex-col gap-4">
                   <Heading level={4}>{t(`${category}.title`)}</Heading>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                  <p className="text-sm text-theme-light-text-secondary dark:text-theme-dark-text-secondary leading-relaxed">
                     {t(`${category}.description`)}
                   </p>
                   <div className="flex flex-wrap gap-2 mt-auto">
@@ -62,10 +62,10 @@ export default function PersonalSection() {
               {education.map((entry) => (
                 <Card key={`${entry.institution}-${entry.degree}`} className="h-full">
                   <Heading level={4} className="mb-2">{entry.degree}</Heading>
-                  <p className="text-sm font-medium text-gray-700 dark:text-gray-300">{entry.institution}</p>
-                  <span className="text-xs text-gray-500 dark:text-gray-400">{t(`education.${entry.id}.period`)}</span>
+                  <p className="text-sm font-medium text-theme-light-text-secondary dark:text-theme-dark-text-secondary">{entry.institution}</p>
+                  <span className="text-xs text-theme-light-text-muted dark:text-theme-dark-text-muted">{t(`education.${entry.id}.period`)}</span>
                   {t(`education.${entry.id}.description`) && (
-                    <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{t(`education.${entry.id}.description`)}</p>
+                    <p className="mt-2 text-sm text-theme-light-text-secondary dark:text-theme-dark-text-secondary leading-relaxed">{t(`education.${entry.id}.description`)}</p>
                   )}
                 </Card>
               ))}
@@ -84,7 +84,7 @@ export default function PersonalSection() {
                     <Heading level={4}>{t(`awards.${award.id}.title`)}</Heading>
                     {award.year && <Badge label={award.year} variant="default" />}
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{t(`awards.${award.id}.description`)}</p>
+                  <p className="text-sm text-theme-light-text-secondary dark:text-theme-dark-text-secondary leading-relaxed">{t(`awards.${award.id}.description`)}</p>
                 </Card>
               ))}
             </div>
@@ -96,7 +96,7 @@ export default function PersonalSection() {
               <Heading level={4} className="mb-3">
                 {t('personality.title')}
               </Heading>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="text-theme-light-text-secondary dark:text-theme-dark-text-secondary leading-relaxed">
                 {t('personality.description')}
               </p>
             </Card>

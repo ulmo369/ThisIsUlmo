@@ -32,7 +32,7 @@ export default function ProjectDetailPage() {
         <SEOHead title={fallbackSeo.title} description={fallbackSeo.description} ogImage={fallbackSeo.ogImage} ogUrl={fallbackSeo.ogUrl} />
         <Container className="text-center py-20">
           <Heading level={2}>{t('notFound')}</Heading>
-          <p className="mt-4 text-gray-600 dark:text-gray-400">
+          <p className="mt-4 text-theme-light-text-secondary dark:text-theme-dark-text-secondary">
             {t('notFoundDescription')}
           </p>
           <Link to="/projects" className="mt-6 inline-block">
@@ -71,7 +71,7 @@ export default function ProjectDetailPage() {
           {/* Title and description */}
           <motion.div variants={fadeInUp}>
             <Heading level={1}>{t(`${project.slug}.title`)}</Heading>
-            <p className="mt-4 text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="mt-4 text-base sm:text-lg text-theme-light-text-secondary dark:text-theme-dark-text-secondary leading-relaxed">
               {t(`${project.slug}.description`)}
             </p>
             {project.repoUrl && (
@@ -100,10 +100,10 @@ export default function ProjectDetailPage() {
             {starKeys.map((key) => (
               <motion.div key={key} variants={fadeInUp}>
                 <Card className="h-full">
-                  <Heading level={3} mono className="mb-3 text-primary-500 dark:text-primary-400">
+                  <Heading level={3} mono className="mb-3 !text-primary-600 dark:!text-primary-400">
                     {t(`star.${key}`)}
                   </Heading>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                  <p className="text-theme-light-text-secondary dark:text-theme-dark-text-secondary text-sm leading-relaxed">
                     {t(`${project.slug}.star.${key}`)}
                   </p>
                 </Card>
@@ -142,7 +142,7 @@ export default function ProjectDetailPage() {
                       {itemsArr.map((item: string, i: number) => (
                         <li
                           key={i}
-                          className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed flex items-start gap-2"
+                          className="text-theme-light-text-secondary dark:text-theme-dark-text-secondary text-sm leading-relaxed flex items-start gap-2"
                         >
                           <span className="text-primary-500 mt-1 shrink-0">•</span>
                           {item}
@@ -161,7 +161,7 @@ export default function ProjectDetailPage() {
               <Card className="flex items-center justify-center py-16 border-dashed">
                 <div className="text-center">
                   <div className="text-4xl mb-3">📐</div>
-                  <p className="text-gray-500 dark:text-gray-400 text-sm">
+                  <p className="text-theme-light-text-muted dark:text-theme-dark-text-muted text-sm">
                     {t('diagramPlaceholder')}
                   </p>
                 </div>

@@ -32,7 +32,7 @@ export default function HeroSection() {
             {tHero('role')}
           </p>
 
-          <p className="max-w-2xl text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+          <p className="max-w-2xl text-base sm:text-lg text-theme-light-text-secondary dark:text-theme-dark-text-secondary leading-relaxed">
             {tHero('intro')}
           </p>
 

@@ -119,11 +119,11 @@ export function Navbar() {
   const langAriaLabel = currentLang === 'en' ? t('language.switchToEs') : t('language.switchToEn');
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-gray-200 bg-background-light/80 backdrop-blur-md dark:border-gray-800 dark:bg-background-dark/80">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-theme-light-border bg-theme-light-base/80 backdrop-blur-md dark:border-theme-dark-border dark:bg-theme-dark-base/80">
       <nav aria-label="Main navigation" className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:py-5">
         <Link
           to="/"
-          className="text-xl font-bold tracking-tight text-gray-900 dark:text-white hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+          className="text-xl font-bold tracking-tight text-theme-light-text-primary dark:text-theme-dark-text-primary hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
           onClick={closeMobileMenu}
         >
           Portfolio
@@ -141,7 +141,7 @@ export function Navbar() {
           <button
             onClick={toggleTheme}
             aria-label={themeAriaLabel}
-            className="rounded-lg p-2.5 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className="rounded-lg p-2.5 text-theme-light-text-secondary dark:text-theme-dark-text-secondary hover:bg-theme-light-surface dark:hover:bg-theme-dark-surface transition-colors"
           >
             {theme === 'dark' ? <SunIcon className="h-6 w-6" /> : <MoonIcon className="h-6 w-6" />}
           </button>
@@ -149,7 +149,7 @@ export function Navbar() {
           <button
             onClick={toggleLanguage}
             aria-label={langAriaLabel}
-            className="rounded-lg px-3 py-2 text-base font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className="rounded-lg px-3 py-2 text-base font-medium text-theme-light-text-secondary dark:text-theme-dark-text-secondary hover:bg-theme-light-surface dark:hover:bg-theme-dark-surface transition-colors"
           >
             {currentLang === 'en' ? 'ES' : 'EN'}
           </button>
@@ -160,7 +160,7 @@ export function Navbar() {
           onClick={() => setMobileMenuOpen((prev) => !prev)}
           aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileMenuOpen}
-          className="md:hidden rounded-lg p-2.5 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          className="md:hidden rounded-lg p-2.5 text-theme-light-text-secondary dark:text-theme-dark-text-secondary hover:bg-theme-light-surface dark:hover:bg-theme-dark-surface transition-colors"
         >
           {mobileMenuOpen ? <CloseIcon className="h-6 w-6" /> : <HamburgerIcon className="h-6 w-6" />}
         </button>
@@ -168,7 +168,7 @@ export function Navbar() {
 
       {/* Mobile dropdown menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-200 dark:border-gray-800 bg-background-light dark:bg-background-dark">
+        <div className="md:hidden border-t border-theme-light-border dark:border-theme-dark-border bg-theme-light-base dark:bg-theme-dark-base">
           <div className="flex flex-col px-4 py-3 space-y-1">
             {navigationItems.map((item) => (
               <Link
@@ -178,18 +178,18 @@ export function Navbar() {
                 className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                   isActiveRoute(item.href)
                     ? 'bg-primary-500/10 text-primary-500 dark:text-primary-400'
-                    : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'
+                    : 'text-theme-light-text-secondary dark:text-theme-dark-text-secondary hover:bg-theme-light-surface dark:hover:bg-theme-dark-surface'
                 }`}
               >
                 <NavLabelText label={item.label} />
               </Link>
             ))}
 
-            <div className="flex items-center gap-2 border-t border-gray-200 dark:border-gray-800 pt-3 mt-2">
+            <div className="flex items-center gap-2 border-t border-theme-light-border dark:border-theme-dark-border pt-3 mt-2">
               <button
                 onClick={toggleTheme}
                 aria-label={themeAriaLabel}
-                className="rounded-lg p-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className="rounded-lg p-2 text-theme-light-text-secondary dark:text-theme-dark-text-secondary hover:bg-theme-light-surface dark:hover:bg-theme-dark-surface transition-colors"
               >
                 {theme === 'dark' ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
               </button>
@@ -197,7 +197,7 @@ export function Navbar() {
               <button
                 onClick={toggleLanguage}
                 aria-label={langAriaLabel}
-                className="rounded-lg px-2.5 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className="rounded-lg px-2.5 py-1.5 text-sm font-medium text-theme-light-text-secondary dark:text-theme-dark-text-secondary hover:bg-theme-light-surface dark:hover:bg-theme-dark-surface transition-colors"
               >
                 {currentLang === 'en' ? 'ES' : 'EN'}
               </button>
@@ -224,7 +224,7 @@ function NavLink({ item, isActive }: { item: { label: string; href: string }; is
       className={`text-base font-medium transition-colors ${
         isActive
           ? 'text-primary-500 dark:text-primary-400'
-          : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+          : 'text-theme-light-text-secondary dark:text-theme-dark-text-secondary hover:text-theme-light-text-primary dark:hover:text-theme-dark-text-primary'
       }`}
     >
       {displayLabel}

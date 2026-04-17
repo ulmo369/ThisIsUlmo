@@ -15,7 +15,7 @@ function FooterNavLink({ item }: { item: { label: string; href: string } }) {
   return (
     <Link
       to={item.href}
-      className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+      className="text-sm font-medium text-theme-light-text-secondary transition-colors hover:text-theme-light-text-primary dark:text-theme-dark-text-secondary dark:hover:text-theme-dark-text-primary"
     >
       {displayLabel}
     </Link>
@@ -26,7 +26,7 @@ export function Footer() {
   const { t } = useTranslation('common');
 
   return (
-    <footer className="border-t border-gray-200 bg-background-light dark:border-gray-800 dark:bg-background-dark">
+    <footer className="border-t border-theme-light-border bg-theme-light-base dark:border-theme-dark-border dark:bg-theme-dark-base">
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:py-12">
         <div className="flex flex-col items-center gap-8 sm:flex-row sm:justify-between sm:items-start">
           <nav aria-label="Footer navigation" className="flex flex-wrap justify-center gap-6 sm:gap-8">
@@ -40,7 +40,7 @@ export function Footer() {
               href={`mailto:${contactInfo.email}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-gray-600 transition-colors hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400"
+              className="text-sm text-theme-light-text-secondary transition-colors hover:text-primary-500 dark:text-theme-dark-text-secondary dark:hover:text-primary-400"
             >
               Email
             </a>
@@ -48,7 +48,7 @@ export function Footer() {
               href={contactInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-gray-600 transition-colors hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400"
+              className="text-sm text-theme-light-text-secondary transition-colors hover:text-primary-500 dark:text-theme-dark-text-secondary dark:hover:text-primary-400"
             >
               LinkedIn
             </a>
@@ -56,15 +56,15 @@ export function Footer() {
               href={contactInfo.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-gray-600 transition-colors hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400"
+              className="text-sm text-theme-light-text-secondary transition-colors hover:text-primary-500 dark:text-theme-dark-text-secondary dark:hover:text-primary-400"
             >
               GitHub
             </a>
           </div>
         </div>
 
-        <div className="mt-8 border-t border-gray-200 pt-6 text-center dark:border-gray-800">
-          <p className="text-sm text-gray-500 dark:text-gray-400">
+        <div className="mt-8 border-t border-theme-light-border pt-6 text-center dark:border-theme-dark-border">
+          <p className="text-sm text-theme-light-text-muted dark:text-theme-dark-text-muted">
             {t('footer.signature')}
           </p>
         </div>

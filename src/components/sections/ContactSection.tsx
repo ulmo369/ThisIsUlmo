@@ -32,22 +32,21 @@ function getContactMethods(): ContactMethod[] {
   return methods;
 }
 
-const STREAK_MESSAGES = [
-  '',
-  'double!!',
-  'triple!!',
-  'dominating!!',
-  'exterminio!!',
-  'masacre!!!',
-  'imparable!!!!',
-  'DIOS!!!!!',
-  'POR ENCIMA DE DIOS!!!!!!',
+const STREAK_SUFFIXES_EN = [
+  '', 'double!!', 'triple!!', 'dominating!!', 'rampage!!',
+  'killing spree!!!', 'unstoppable!!!!', 'GOD LIKE!!!!!', 'BEYOND GOD LIKE!!!!!!',
 ];
 
-function CopyButton({ value, label }: { value: string; label: string }) {
+const STREAK_SUFFIXES_ES = [
+  '', 'doble!!', 'triple!!', 'dominando!!', 'exterminio!!',
+  'masacre!!!', 'imparable!!!!', 'DIOS!!!!!', 'POR ENCIMA DE DIOS!!!!!!',
+];
+
+function CopyButton({ value, label, lang }: { value: string; label: string; lang: string }) {
   const [streak, setStreak] = useState(0);
   const [visible, setVisible] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const suffixes = lang.startsWith('es') ? STREAK_SUFFIXES_ES : STREAK_SUFFIXES_EN;
 
   const handleCopy = useCallback(async () => {
     try {
@@ -61,7 +60,7 @@ function CopyButton({ value, label }: { value: string; label: string }) {
 
     // Bump streak (first click = 0, second = 1, etc.)
     setStreak((prev) => {
-      const next = visible ? Math.min(prev + 1, STREAK_MESSAGES.length - 1) : 0;
+      const next = visible ? Math.min(prev + 1, suffixes.length - 1) : 0;
       return next;
     });
     setVisible(true);
@@ -73,53 +72,51 @@ function CopyButton({ value, label }: { value: string; label: string }) {
     }, 2000);
   }, [value, visible]);
 
-  const suffix = STREAK_MESSAGES[streak];
+  const suffix = suffixes[streak];
   const message = suffix ? `${label} ${suffix}` : label;
 
   return (
-    <div className="flex flex-col items-center gap-1 min-h-[2.5rem]">
+    <div className="relative flex flex-col items-center gap-1">
       <div className="flex items-center gap-1.5">
-        <span className="text-xs text-gray-500 dark:text-gray-400">{value}</span>
+        <span className="text-xs text-theme-light-text-muted dark:text-theme-dark-text-muted">{value}</span>
         <button
           onClick={handleCopy}
           aria-label={label}
-          className="p-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+          className="p-1 rounded hover:bg-theme-light-surface dark:hover:bg-theme-dark-surface transition-colors"
         >
-          <MdContentCopy className="w-3.5 h-3.5 text-gray-400 dark:text-gray-500" />
+          <MdContentCopy className="w-3.5 h-3.5 text-theme-light-text-muted dark:text-theme-dark-text-muted" />
         </button>
       </div>
-      <div className="h-5 flex items-center justify-center">
-        <AnimatePresence mode="wait">
-          {visible && (
-            <motion.span
-              key={streak}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={
-                streak >= 8
-                  ? { opacity: 1, scale: 1.35, x: [0, -4, 4, -4, 4, -2, 2, 0], y: [0, -2, 2, -2, 2, 0] }
-                  : streak >= 7
-                    ? { opacity: 1, scale: 1.3, x: [0, -2, 2, -2, 2, 0] }
-                    : { opacity: 1, scale: 1 + streak * 0.04 }
-              }
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={
-                streak >= 7
-                  ? { duration: 0.4, x: { repeat: Infinity, duration: 0.3 }, y: { repeat: Infinity, duration: 0.4 } }
-                  : { duration: 0.15 }
-              }
-              className="text-xs text-primary-500 dark:text-primary-400 whitespace-nowrap font-medium text-center"
+      <AnimatePresence mode="wait">
+        {visible && (
+          <motion.span
+            key={streak}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={
+              streak >= 8
+                ? { opacity: 1, scale: 1.35, x: [0, -4, 4, -4, 4, -2, 2, 0], y: [0, -2, 2, -2, 2, 0] }
+                : streak >= 7
+                  ? { opacity: 1, scale: 1.3, x: [0, -2, 2, -2, 2, 0] }
+                  : { opacity: 1, scale: 1 + streak * 0.04 }
+            }
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={
+              streak >= 7
+                ? { duration: 0.4, x: { repeat: Infinity, duration: 0.3 }, y: { repeat: Infinity, duration: 0.4 } }
+                : { duration: 0.15 }
+            }
+            className="absolute -bottom-5 text-xs text-primary-500 dark:text-primary-400 whitespace-nowrap font-medium text-center"
             >
               {message}
             </motion.span>
           )}
         </AnimatePresence>
-      </div>
     </div>
   );
 }
 
 export default function ContactSection() {
-  const { t } = useTranslation('contact');
+  const { t, i18n } = useTranslation('contact');
   const methods = getContactMethods();
 
   return (
@@ -134,14 +131,14 @@ export default function ContactSection() {
         >
           <motion.div variants={fadeInUp} className="text-center">
             <Heading level={2}>{t('title')}</Heading>
-            <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-theme-light-text-secondary dark:text-theme-dark-text-secondary leading-relaxed">
               {t('subtitle')}
             </p>
           </motion.div>
 
           <motion.div
             variants={fadeInUp}
-            className="flex flex-wrap items-start justify-center gap-8"
+            className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-12 max-w-2xl mx-auto"
           >
             {methods.map((method) => {
               const IconComponent = method.icon;
@@ -152,13 +149,13 @@ export default function ContactSection() {
                     target={method.external ? '_blank' : undefined}
                     rel={method.external ? 'noopener noreferrer' : undefined}
                     aria-label={t(`tooltips.${method.key}`)}
-                    className="flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    className="flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-theme-light-surface dark:hover:bg-theme-dark-surface transition-colors"
                   >
                     <IconComponent className="w-8 h-8 text-primary-500 dark:text-primary-400" />
-                    <span className="text-xs text-gray-500 dark:text-gray-400">{t(`tooltips.${method.key}`)}</span>
+                    <span className="text-xs text-theme-light-text-muted dark:text-theme-dark-text-muted">{t(`tooltips.${method.key}`)}</span>
                   </a>
                   {method.copyValue && (
-                    <CopyButton value={method.copyValue} label={t('copied')} />
+                    <CopyButton value={method.copyValue} label={t('copied')} lang={i18n.language} />
                   )}
                 </div>
               );
@@ -167,7 +164,7 @@ export default function ContactSection() {
 
           <motion.p
             variants={fadeInUp}
-            className="text-center text-gray-500 dark:text-gray-400 text-sm sm:text-base"
+            className="text-center text-theme-light-text-muted dark:text-theme-dark-text-muted text-sm sm:text-base mt-4"
           >
             {t('cta')}
           </motion.p>
