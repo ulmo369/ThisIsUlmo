@@ -18,7 +18,7 @@ export default function BlogPage() {
         <p className="text-2xl sm:text-3xl font-semibold text-primary-500 dark:text-primary-400">
           {t('comingSoon')}
         </p>
-        <p className="max-w-xl text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed">
+        <p className="max-w-xl text-theme-light-text-secondary dark:text-theme-dark-text-secondary text-base sm:text-lg leading-relaxed">
           {t('description')}
         </p>
       </Container>
