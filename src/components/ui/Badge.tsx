@@ -5,11 +5,11 @@ interface BadgeProps {
 }
 
 const variantClasses: Record<string, string> = {
-  core: 'bg-primary-100 text-primary-800 dark:bg-primary-900/40 dark:text-primary-300 border-primary-200 dark:border-primary-800',
+  core: 'bg-primary-100 text-primary-800 dark:bg-primary-800/60 dark:text-primary-200 border-primary-200 dark:border-primary-600',
   experienced:
-    'bg-accent-green-bg-light text-accent-green-light dark:bg-accent-green-bg-dark dark:text-accent-green-dark border-accent-green-light/30 dark:border-accent-green-dark/40',
+    'bg-accent-green-bg-light text-accent-green-light dark:bg-accent-green/30 dark:text-accent-green-light border-accent-green-light/30 dark:border-accent-green/50',
   familiar:
-    'bg-accent-red-bg-light text-accent-red-light dark:bg-accent-red-bg-dark dark:text-accent-red-dark border-accent-red-light/30 dark:border-accent-red-dark/40',
+    'bg-accent-red-bg-light text-accent-red-light dark:bg-accent-red/25 dark:text-accent-red-light border-accent-red-light/30 dark:border-accent-red/45',
   default:
     'bg-theme-light-surface text-theme-light-text-secondary dark:bg-theme-dark-surface dark:text-theme-dark-text-secondary border-theme-light-border dark:border-theme-dark-border',
 };
