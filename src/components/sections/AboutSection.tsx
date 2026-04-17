@@ -23,7 +23,7 @@ export default function AboutSection() {
         >
           <motion.div variants={fadeInUp} className="text-center">
             <Heading level={2}>{t('title')}</Heading>
-            <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-theme-light-text-secondary dark:text-theme-dark-text-secondary leading-relaxed">
               {t('intro')}
             </p>
           </motion.div>
@@ -35,7 +35,7 @@ export default function AboutSection() {
                   <Heading level={3} className="mb-3">
                     {t(`${key}.title`)}
                   </Heading>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                  <p className="text-theme-light-text-secondary dark:text-theme-dark-text-secondary leading-relaxed">
                     {t(`${key}.description`)}
                   </p>
                 </Card>
@@ -50,7 +50,7 @@ export default function AboutSection() {
             <div className="grid gap-4 sm:grid-cols-3">
               {principleKeys.map((key) => (
                 <Card key={key} className="text-center">
-                  <p className="font-medium text-gray-900 dark:text-gray-100">
+                  <p className="font-medium text-theme-light-text-primary dark:text-theme-dark-text-primary">
                     {t(`principles.${key}`)}
                   </p>
                 </Card>

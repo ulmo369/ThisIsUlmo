@@ -73,7 +73,7 @@ export default function SkillsSection() {
           {/* Header */}
           <motion.div variants={fadeInUp} className="text-center">
             <Heading level={2}>{t('title')}</Heading>
-            <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-theme-light-text-secondary dark:text-theme-dark-text-secondary leading-relaxed">
               {t('subtitle')}
             </p>
           </motion.div>
@@ -81,7 +81,7 @@ export default function SkillsSection() {
           {/* Proficiency legend */}
           <motion.div
             variants={fadeInUp}
-            className="flex flex-wrap items-center justify-center gap-4 text-sm text-gray-500 dark:text-gray-400"
+            className="flex flex-wrap items-center justify-center gap-4 text-sm text-theme-light-text-muted dark:text-theme-dark-text-muted"
           >
             <div className="flex items-center gap-2">
               <Badge label={t('proficiency.core')} variant="core" />

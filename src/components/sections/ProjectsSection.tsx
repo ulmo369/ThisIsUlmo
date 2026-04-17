@@ -22,7 +22,7 @@ function ProjectCard({ project }: { project: Project }) {
           <Heading level={3} className="mb-2">
             {t(`${project.slug}.title`)}
           </Heading>
-          <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4 flex-1">
+          <p className="text-theme-light-text-secondary dark:text-theme-dark-text-secondary text-sm leading-relaxed mb-4 flex-1">
             {t(`${project.slug}.description`)}
           </p>
 
@@ -38,7 +38,7 @@ function ProjectCard({ project }: { project: Project }) {
             const metrics = t(`${project.slug}.metrics`, { returnObjects: true });
             const metricsArr = Array.isArray(metrics) ? metrics : [];
             return metricsArr.length > 0 ? (
-              <div className="flex flex-wrap gap-2 pt-3 border-t border-gray-200 dark:border-gray-700">
+              <div className="flex flex-wrap gap-2 pt-3 border-t border-theme-light-border dark:border-theme-dark-border">
                 {metricsArr.map((metric: string) => (
                   <Badge key={metric} label={metric} variant="core" />
                 ))}
@@ -69,7 +69,7 @@ export default function ProjectsSection() {
           {/* Header */}
           <motion.div variants={fadeInUp} className="text-center">
             <Heading level={2}>{t('title')}</Heading>
-            <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-theme-light-text-secondary dark:text-theme-dark-text-secondary leading-relaxed">
               {t('subtitle')}
             </p>
           </motion.div>
