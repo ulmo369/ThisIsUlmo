@@ -33,8 +33,8 @@ function getContactMethods(): ContactMethod[] {
 }
 
 const STREAK_SUFFIXES_EN = [
-  '', 'double!!', 'triple!!', 'dominating!!', 'exterminio!!',
-  'masacre!!!', 'imparable!!!!', 'DIOS!!!!!', 'POR ENCIMA DE DIOS!!!!!!',
+  '', 'double!!', 'triple!!', 'dominating!!', 'rampage!!',
+  'killing spree!!!', 'unstoppable!!!!', 'GOD LIKE!!!!!', 'BEYOND GOD LIKE!!!!!!',
 ];
 
 const STREAK_SUFFIXES_ES = [
@@ -138,7 +138,7 @@ export default function ContactSection() {
 
           <motion.div
             variants={fadeInUp}
-            className="flex flex-wrap items-start justify-center gap-12 sm:gap-16"
+            className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-12 max-w-2xl mx-auto"
           >
             {methods.map((method) => {
               const IconComponent = method.icon;
