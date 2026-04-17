@@ -23,7 +23,7 @@ export default function Heading({
   const Tag = `h${level}` as ElementType;
 
   const baseClasses =
-    'text-gray-900 dark:text-gray-100 tracking-tight';
+    'text-theme-light-text-primary dark:text-theme-dark-text-primary tracking-tight';
 
   const fontClass = mono ? 'font-mono' : '';
 

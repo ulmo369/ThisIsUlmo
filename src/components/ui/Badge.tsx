@@ -7,9 +7,9 @@ interface BadgeProps {
 const variantClasses: Record<string, string> = {
   core: 'bg-primary-100 text-primary-800 dark:bg-primary-900/40 dark:text-primary-300 border-primary-200 dark:border-primary-800',
   experienced:
-    'bg-accent-green/10 text-accent-green-dark dark:bg-accent-green/20 dark:text-accent-green-light border-accent-green/30 dark:border-accent-green/40',
+    'bg-accent-green-bg-light text-accent-green-light dark:bg-accent-green-bg-dark dark:text-accent-green-dark border-accent-green-light/30 dark:border-accent-green-dark/40',
   familiar:
-    'bg-accent-red/10 text-accent-red-dark dark:bg-accent-red/20 dark:text-accent-red-light border-accent-red/30 dark:border-accent-red/40',
+    'bg-accent-red-bg-light text-accent-red-light dark:bg-accent-red-bg-dark dark:text-accent-red-dark border-accent-red-light/30 dark:border-accent-red-dark/40',
   default:
     'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 border-gray-200 dark:border-gray-700',
 };

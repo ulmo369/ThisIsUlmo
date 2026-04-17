@@ -14,10 +14,10 @@ export default function Card({
   onClick,
 }: CardProps) {
   const baseClasses =
-    'rounded-xl border bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800 p-4 sm:p-6 transition-all duration-200';
+    'rounded-xl border bg-theme-light-surface dark:bg-theme-dark-surface border-theme-light-border dark:border-theme-dark-border p-4 sm:p-6 transition-all duration-200';
 
   const hoverClasses = hoverable
-    ? 'hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-gray-900/50 cursor-pointer'
+    ? 'hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-primary-500/10 cursor-pointer'
     : '';
 
   const classes = `${baseClasses} ${hoverClasses} ${className}`.trim();

@@ -13,13 +13,13 @@ interface ButtonProps {
 
 const variantClasses: Record<string, string> = {
   primary:
-    'bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 focus-visible:ring-primary-500',
+    'bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-400 focus-visible:ring-primary-500',
   secondary:
-    'bg-gray-200 text-gray-900 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-600 focus-visible:ring-gray-400',
+    'bg-theme-light-elevated text-theme-light-text-primary hover:bg-theme-light-border-accent dark:bg-theme-dark-elevated dark:text-theme-dark-text-primary dark:hover:bg-theme-dark-border-accent focus-visible:ring-primary-400',
   ghost:
-    'bg-transparent text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 focus-visible:ring-gray-400',
+    'bg-transparent text-theme-light-text-secondary hover:bg-theme-light-surface dark:text-theme-dark-text-secondary dark:hover:bg-theme-dark-surface focus-visible:ring-primary-400',
   outline:
-    'border border-gray-300 text-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800 focus-visible:ring-gray-400',
+    'border border-theme-light-border text-theme-light-text-secondary hover:bg-theme-light-surface dark:border-theme-dark-border dark:text-theme-dark-text-secondary dark:hover:bg-theme-dark-surface focus-visible:ring-primary-400',
 };
 
 const sizeClasses: Record<string, string> = {

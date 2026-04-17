@@ -21,13 +21,13 @@ describe('Badge', () => {
   it('applies experienced variant classes', () => {
     render(<Badge label="Exp" variant="experienced" />);
     const badge = screen.getByText('Exp');
-    expect(badge.className).toContain('bg-accent-green/10');
+    expect(badge.className).toContain('bg-accent-green-bg-light');
   });
 
   it('applies familiar variant classes', () => {
     render(<Badge label="Fam" variant="familiar" />);
     const badge = screen.getByText('Fam');
-    expect(badge.className).toContain('bg-accent-red/10');
+    expect(badge.className).toContain('bg-accent-red-bg-light');
   });
 
   it('applies default variant classes when no variant specified', () => {
