@@ -5,7 +5,7 @@
 @layer base {
   /* Default dark mode background and text */
   html {
-    @apply bg-background-dark text-gray-100;
+    @apply bg-theme-dark-base text-theme-dark-text-primary;
     font-family: 'Inter', 'Geist', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -13,7 +13,7 @@
 
   /* Light mode overrides */
   html:not(.dark) {
-    @apply bg-background-light text-gray-900;
+    @apply bg-theme-light-base text-theme-light-text-primary;
   }
 
   /* Smooth theme transitions */
@@ -42,7 +42,7 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-background-dark;
+    @apply bg-theme-dark-base;
   }
 
   ::-webkit-scrollbar-thumb {
@@ -50,7 +50,7 @@
   }
 
   html:not(.dark) ::-webkit-scrollbar-track {
-    @apply bg-background-light;
+    @apply bg-theme-light-base;
   }
 
   html:not(.dark) ::-webkit-scrollbar-thumb {
