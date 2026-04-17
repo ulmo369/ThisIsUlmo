@@ -9,9 +9,9 @@ const dark = {
 };
 
 const light = {
-  base: '#f8fafc', surface: '#f1f5f9', elevated: '#e2e8f0',
-  border: '#e2e8f0', borderAccent: '#cbd5e1',
-  textPrimary: '#0f172a', textSecondary: '#475569', textMuted: '#94a3b8',
+  base: '#f5f5f4', surface: '#e7e5e4', elevated: '#d6d3d1',
+  border: '#d6d3d1', borderAccent: '#a8a29e',
+  textPrimary: '#1c1917', textSecondary: '#57534e', textMuted: '#a8a29e',
   accentGreen: '#16a34a', accentGreenBg: '#dcfce7',
   accentRed: '#dc2626', accentRedBg: '#fee2e2',
   primary: '#2563eb',
@@ -104,7 +104,7 @@ export default function PalettePreview() {
       <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 24, textAlign: 'center' }}>Color Palette Preview</h1>
       <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', justifyContent: 'center' }}>
         <Panel title="Dark Mode (Azul-Indigo)" tokens={dark} />
-        <Panel title="Light Mode (Cool White)" tokens={light} isLight />
+        <Panel title="Light Mode (Warm Gray)" tokens={light} isLight />
       </div>
     </div>
   );
