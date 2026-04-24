@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { ScrollToTopButton } from '@/components/layout/ScrollToTopButton';
@@ -13,6 +14,7 @@ export function AppLayout() {
       </main>
       <Footer />
       <ScrollToTopButton />
+      <Analytics />
     </div>
   );
 }
