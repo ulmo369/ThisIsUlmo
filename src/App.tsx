@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react'
 import { ErrorBoundary } from '@/components/layout/ErrorBoundary'
 import { AppLayout } from '@/components/layout/AppLayout'
 import { LoadingFallback } from '@/components/layout/LoadingFallback'
@@ -28,6 +29,7 @@ function App() {
           <Route path="/dev/components" element={<ComponentsView />} />
         </Routes>
       </Suspense>
+      <Analytics />
     </ErrorBoundary>
   )
 }
